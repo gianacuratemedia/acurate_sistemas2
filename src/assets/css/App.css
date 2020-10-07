@@ -1,0 +1,171 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.header {
+width: 100%;
+height: 1000px;
+background-size: cover;
+text-decoration: none;
+}
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.boton-iniciar{
+  text-decoration: none;
+  position: absolute;
+  margin: 20px 0px 0px 350px;
+  display: inline-block;
+
+  line-height: 2;
+  width: 160px;
+  padding: 0 1.5em;
+  color: white;
+  border-radius: 2em;
+  font-size: 18px;
+  
+}
+
+.boton-unete{
+  text-decoration: none;
+  position: fixed;
+  margin: 20px 0px 0px 500px;
+  display: inline-block;
+  background: rgb(66, 12, 214);
+  line-height: 2;
+  width: 110px;
+  padding: 0 1.5em;
+  color: white;
+  border-radius: 2em;
+  font-size: 18px;
+  }
+  .boton-unete:hover{
+    background: rgb(12, 12, 187);
+  }
+.boton-unete:active{
+  transform: scale(.99);
+}
+
+
+.barraBusqueda{
+  position: relative;
+  margin: 425px 0px 0px 365px;
+  width: 500px;
+  height: 40px;
+  background-color:white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.buscador{
+margin: 0px 0px 0px 30px;
+width: 460px;
+height: 25px;
+font-size: 18px;
+color: rgb(15, 15, 15);
+border: none;
+outline: none;
+
+}
+.buscador:focus{
+ /** border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;**/
+}
+
+.buscador:hover{
+  opacity: 1;
+  color:rgb(8, 22, 53);
+}
+
+.icon{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0px 0px 0px 10px;
+color: rgb(119, 118, 118);
+
+}
+
+
+.azul{
+position: relative;
+width: 250px;
+height: 115px;
+margin: 10px 0px 0px 50px;
+}
+
+.fondo{
+  position: absolute;
+  width: 1263px;
+  height: 600px;
+  margin: 0px 0px 0px 0px;
+ 
+}
+
+
+.texto{
+  position: absolute;
+  margin: 100px 0px 0px 80px;
+
+}
+
+.parrafoPrincipal{
+  position: absolute;
+  margin: 195px 0px 0px 80px;
+
+}
+
+.boton{
+  text-decoration: none;
+  position: absolute;
+  margin: 310px 0px 0px 100px;
+  display: inline-block;
+  background: rgb(192, 108, 12);
+  line-height: 3;
+  width: 180px;
+  padding: 0 1.5em;
+  color: white;
+  border-radius: 2em;
+
+}
+.boton:hover{
+  background-color: rgb(197, 120, 5);
+}
+.boton:active{
+  transform: scale(.99);
+}
