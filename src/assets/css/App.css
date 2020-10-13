@@ -140,12 +140,14 @@ margin: 10px 0px 0px 50px;
 
 .texto{
   position: absolute;
+  color: white;
   margin: 100px 0px 0px 80px;
 
 }
 
 .parrafoPrincipal{
   position: absolute;
+  color: white;
   margin: 195px 0px 0px 80px;
 
 }

@@ -9,7 +9,7 @@ body {
   display: flex;
 
   align-items: center;
-  background-color: blueviolet;
+  background-color: rgb(255, 255, 255);
 }
 
 code {
