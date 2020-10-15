@@ -13,9 +13,6 @@ background-size: cover;
 text-decoration: none;
 }
 
-
-
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,9 +23,6 @@ text-decoration: none;
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
-
 
 .App-link {
   color: #61dafb;
@@ -58,39 +52,6 @@ text-decoration: none;
   
 }
 
-.boton-unete{
-  text-decoration: none;
-  position: fixed;
-  margin: 20px 0px 0px 500px;
-  display: inline-block;
-  background: rgb(66, 12, 214);
-  line-height: 2;
-  width: 110px;
-  padding: 0 1.5em;
-  color: white;
-  border-radius: 2em;
-  font-size: 18px;
-  }
-  .boton-unete:hover{
-    background: rgb(12, 12, 187);
-  }
-.boton-unete:active{
-  transform: scale(.99);
-}
-
-
-.barraBusqueda{
-  position: relative;
-  margin: 425px 0px 0px 365px;
-  width: 500px;
-  height: 40px;
-  background-color:white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  opacity: 0.9;
-}
-
 .buscador{
 margin: 0px 0px 0px 30px;
 width: 460px;
@@ -101,10 +62,10 @@ border: none;
 outline: none;
 
 } */
-.buscador:focus{
+/* .buscador:focus{ */
  /** border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;**/
-}
+/* } */
 
 /* .buscador:hover{
   opacity: 1;
@@ -121,9 +82,6 @@ color: rgb(119, 118, 118);
 
 }
 
-
-
-
 .fondo{
   position: absolute;
   width: 1263px;
@@ -132,43 +90,91 @@ color: rgb(119, 118, 118);
  
 }
 
-
-.texto{
-  position: absolute;
-  color: white;
-  margin: 100px 0px 0px 80px;
-
-}
-
-.parrafoPrincipal{
-  position: absolute;
-  color: white;
-  margin: 195px 0px 0px 80px;
-
-}
-
-.boton{
-  text-decoration: none;
-  position: absolute;
-  margin: 310px 0px 0px 100px;
-  display: inline-block;
-  background: rgb(192, 108, 12);
-  line-height: 3;
-  width: 180px;
-  padding: 0 1.5em;
-  color: white;
-  border-radius: 2em;
-
-}
 .boton:hover{
   background-color: rgb(197, 120, 5);
 }
 .boton:active{
   transform: scale(.99);
 } */
+
+.parallax-container {
+  height: 800px !important;
+}
+
 .azul{
   position: relative;
   width: 250px;
   margin-left: 30px;
   margin-top: -29px;
+  }
+
+  .texto{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin: 16vh;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .parrafoPrincipal{
+    position: absolute;
+    color: white;
+    font-size: 3vh;
+    margin-top: 35vh;
+    margin-left: 16vh;
+    -webkit-text-stroke: .6px black;
+  }
+
+  .boton{
+    text-decoration: none;
+    position: absolute;
+    margin-top: 58vh;
+    margin-left: 16vh;
+    display: inline-block;
+    background: rgba(192, 108, 12, 0.877);
+    line-height: 3;
+    width: 180px;
+    padding: 0 1.5em;
+    color: white;
+    border-radius: 2em;
+  
+  }
+  .boton:hover{
+    background-color: rgb(197, 120, 5);
+  }
+  .boton:active{
+    transform: scale(.99);
+  }
+
+  .barraBusqueda{
+    position: relative;
+    margin-top: 70vh;
+    margin-left: 70vh;
+    width: 500px;
+    height: 40px;
+    background-color:white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+  }
+
+  .boton-unete{
+    text-decoration: none;
+    /* position: fixed; */
+    /* margin: 20px 0px 0px 500px; */
+    display: inline-block;
+    background: rgb(66, 12, 214);
+    line-height: 2;
+    width: 110px;
+    padding: 0 1.5em;
+    color: white;
+    border-radius: 2em;
+    font-size: 18px;
+    }
+
+    .boton-unete:hover{
+      background: rgb(12, 12, 187);
+    }
+  .boton-unete:active{
+    transform: scale(.99);
   }
