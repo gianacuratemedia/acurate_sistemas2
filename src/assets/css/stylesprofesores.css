@@ -5,11 +5,12 @@
     box-sizing: border-box;
 
 }
-.texto2{
+/* .texto2{
     margin: 30px 0px 0px 440px;
     color: rgb(25, 25, 187);
-}
-.profe1{
+} */
+
+/* .profe1{
     -webkit-filter: grayscale(100%)
     brightness(25%) sepia(80%)
     hue-rotate(-180deg)
@@ -25,11 +26,9 @@
     border-radius: 50%;
     width: 70%;
     height: 70%;
-    
-   
-}
+} */
 
-.container{
+/* .container{
     text-decoration: none;
     list-style: none;
     color: rgb(11, 11, 12);
@@ -52,4 +51,4 @@
     list-style: none;
     padding: 3em;
     color: rgb(5, 5, 5);
-}
+} */
