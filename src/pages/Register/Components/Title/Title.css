@@ -1,0 +1,11 @@
+.titlecont label {
+    color: rgba(44, 75, 142, 1);
+    font-size: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: bold;
+    height: 100px;
+    margin-left: 200px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
