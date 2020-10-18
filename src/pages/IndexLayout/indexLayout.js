@@ -3,9 +3,10 @@ import "../../assets/css/indexLayout.css";
 import "../../assets/css/stylesprofesores.css";
 
 
-import imagenes from "./assets/img/imagenes";
+import imagenes from "../../assets/img/imagenes";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
