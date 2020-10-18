@@ -1,0 +1,10 @@
+.label {
+    color: rgba(67, 71, 76, 1);
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    padding-left: 480px;
+    align-items: center;
+    height: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}

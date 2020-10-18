@@ -1,0 +1,57 @@
+.logincont{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    color: black;
+}
+
+.boton-inicio-container{
+    position: absolute;
+    margin-left: 500px; 
+    margin-top: 320px; 
+    display: flex;
+
+}
+
+.boton-inicio-sesion{
+    /*text-decoration: none;*/
+    width: 400px;
+    padding: 0 1.5em;
+    color: white;
+    border-radius: 2em;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    background: rgb(192, 108, 12);
+    line-height: 3;
+  }
+  .boton-inicio-sesion:hover{
+    background-color: rgb(197, 120, 5);
+  }
+  .boton-inicio-sesion:active{
+    transform: scale(.99);
+  }
+
+  .olvide{
+    margin-left: 730px; 
+    margin-top: 15px; 
+    color: gray;
+    text-decoration: underline;
+    font-size: 15px;
+  }
+
+  .cuenta{
+    margin-left: 650px; 
+    margin-top: 90px;
+    color: gray;
+    font-size: 15px;
+  }
+
+  .registrate{
+    margin-left: 830px; 
+    margin-top: -20px; 
+    color: rgba(44, 75, 142, 1);
+    font-weight: bold;
+    font-size: 15px;
+  }
