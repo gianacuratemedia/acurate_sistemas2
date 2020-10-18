@@ -3,6 +3,7 @@ import blanco from './knowtureblanco.png';
 import fondo from './fondo1.jpg';
 import fondo2 from './fondo2.jpg';
 import profesor from './persona1.jpg';
+import registro from './registro.PNG';
 
 
 export default {
@@ -11,5 +12,6 @@ export default {
     "img2": blanco,
     "img3": fondo,
     "img4": fondo2,
-    "img5": profesor
+    "img5": profesor,
+    "registro": registro
 }
