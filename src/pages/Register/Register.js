@@ -5,9 +5,9 @@ import imagenes from '../../assets/img/imagenes';
 
 import './Register.css';
 
-import Title from './Components/Title/Title';
-import Label from './Components/Label/Label';
-import Input from './Components/Input/Input'; 
+import Title from './Components/Title/TitleReg';
+import Label from './Components/Label/LabelReg';
+import Input from './Components/Input/InputReg'; 
 
 
 const Register = () => {
@@ -51,6 +51,7 @@ const Register = () => {
             <br></br>
             
             <Label text='Nombre de usuario'> </Label> 
+            <div className='inputNombre'>
             <Input
             attribute={{ //Apartado usuario
                 id: 'nombreUsuario',
@@ -61,8 +62,10 @@ const Register = () => {
             handleChange={handleChange}
             >
             </Input>
+            </div>
 
             <Label text='Correo electrónico'> </Label> 
+            <div className='inputUsuario'>
             <Input
             attribute={{ //Apartado usuario
                 id: 'usuario',
@@ -73,9 +76,11 @@ const Register = () => {
             handleChange={handleChange}
             >
             </Input>
+            </div>
 
 
             <Label text='Contraseña'> </Label>
+            <div className='inputContraseñaReg'>
             <Input
             attribute={{ //Apartado contraseña
                 id: 'contraseña',
@@ -87,6 +92,7 @@ const Register = () => {
             param={passwordError}
             >
             </Input>
+            </div>
             
             <div className='boton-inicio-container'> 
             <button onClick={handleSubmit} className='boton-inicio-sesion'> 
@@ -111,11 +117,3 @@ const Register = () => {
 };
 
 export default Register;
-
-/* 
-//Recibir el evento y se ejecuta la funcion handle submit
-    <button onClick={handleSubmit}> //Va a esperar una funcion, definida a arriba 
-        Ingresar
-        
-    </button> 
-*/

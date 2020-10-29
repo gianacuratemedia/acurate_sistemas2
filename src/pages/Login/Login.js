@@ -3,21 +3,21 @@ import React, {useState} from 'react';
 
 import './Login.css';
 
-import Title from './Components/Title/Title';
-import Label from './Components/Label/Label';
-import Input from './Components/Input/Input'; 
+import Title from './Components/Title/TitleLog';
+import Label from './Components/Label/LabelLog';
+import Input from './Components/Input/InputLog'; 
 
 
 const Login = () => {
 
     //Estados
-    const [user, setUser] = useState(''); //Buscar
-    const [password, setPassword] = useState(''); //Buscar
+    const [user, setUser] = useState(''); 
+    const [password, setPassword] = useState(''); 
     const [passwordError, setPasswordError]=useState(false);
 
     function handleChange(name, value){ //Si es el ingreso (en text box) de usuario tomar info, si es el de contraseña no
-        if(name === 'usuario'){
-            setUser(value)
+        if(name === 'usuario'){ 
+                setUser(value)
         } 
         else{ 
             if(value.length < 6){ //Solo de tamaño seran mas de 6 caracteres
@@ -41,9 +41,14 @@ const Login = () => {
 
     return (
         <div className= 'logincont'>
+            <div className='titulo'>
             <Title text= 'Knowture'> </Title>
-            
+            </div>
+ 
+            <div className='labelCorreo'>
             <Label text='Correo Electrónico'> </Label> 
+            </div>
+            <div className='inputCorreo'>
             <Input
             attribute={{ //Apartado usuario
                 id: 'usuario',
@@ -54,9 +59,12 @@ const Login = () => {
             handleChange={handleChange}
             >
             </Input>
+            </div>
 
-
+            <div className='labelContraseña'>
             <Label text='Contraseña'> </Label>
+            </div>
+            <div className='inputContraseña'>
             <Input
             attribute={{ //Apartado contraseña
                 id: 'contraseña',
@@ -68,9 +76,10 @@ const Login = () => {
             param={passwordError}
             >
             </Input>
+            </div>
             
-            <div className='boton-inicio-container'> 
-            <button onClick={handleSubmit} className='boton-inicio-sesion'> 
+            <div className='boton-iniciaSesion-container'> 
+            <button onClick={handleSubmit} className='boton-inicia-sesion'> 
                 {/*<link to={"/register"}> Enlace a pagina*/}
                 Inicia Sesión
                 {/*</link>*/}
@@ -81,7 +90,7 @@ const Login = () => {
                 ¿Olvidaste tu Contraseña?    
             </a> 
 
-            <div className='cuenta'> 
+            <div className='cuentaLog'> 
                 ¿No tienes una cuenta?   
             </div>
 
@@ -94,11 +103,3 @@ const Login = () => {
 };
 
 export default Login;
-
-/* 
-//Recibir el evento y se ejecuta la funcion handle submit
-    <button onClick={handleSubmit}> //Va a esperar una funcion, definida a arriba 
-        Ingresar
-        
-    </button> 
-*/
