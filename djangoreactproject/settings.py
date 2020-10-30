@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
      'django_email_verification',
+     'django.contrib.sites',
+     
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -93,7 +97,7 @@ TEMPLATES = [
         },
     },
 ]
-AUTH_USER_MODEL = 'user.CustomUser'
+AUTH_USER_MODEL = 'Usuarios_k.CustomUser'
 WSGI_APPLICATION = 'djangoreactproject.wsgi.application'
 
 
@@ -110,6 +114,11 @@ DATABASES = {
             'HOST': 'localhost',
             'PORT': '3306',
         }
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
 
 
@@ -160,3 +169,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
