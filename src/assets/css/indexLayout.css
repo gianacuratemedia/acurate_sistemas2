@@ -178,3 +178,31 @@ color: rgb(119, 118, 118);
   .boton-unete:active{
     transform: scale(.99);
   }
+
+  .mas-600{
+    width: 350px;
+    height: 250px;
+    margin-left: -100px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: beige;
+
+  }
+
+  .avanza-ritmo{
+    width: 350px;
+    height: 250px;
+    margin-left: 300px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: beige;
+  }
+
+  .instruccion-experta{
+    width: 350px;
+    height: 250px;
+    margin-left: 700px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: beige;
+  }

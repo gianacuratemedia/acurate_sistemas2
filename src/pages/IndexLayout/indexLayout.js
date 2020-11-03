@@ -126,6 +126,38 @@ function App() {
           <img src={imagenes.img4} />
         </div>
       </div>
+
+
+      <div class="section white">
+        <div class="row container">
+          <div class="mas-600">
+            <div class="header center">+600 cursos en linea</div>
+          </div>
+          <div class="avanza-ritmo">
+            <div class="header center">Avanza a tu propio ritmo</div>
+          </div>
+          <div class="instruccion-experta">
+            <div class="header center">Instrucción Experta</div>
+          </div>
+        </div>
+      </div>
+
+      {/*Encuentra tu pasión */}
+      <div class="section white">
+        <div class="row container">
+          <div class="mas-600">
+            <div class="header center">+600 cursos en linea</div>
+          </div>
+          <div class="avanza-ritmo">
+            <div class="header center">Avanza a tu propio ritmo</div>
+          </div>
+          <div class="instruccion-experta">
+            <div class="header center">Instrucción Experta</div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   );
 }

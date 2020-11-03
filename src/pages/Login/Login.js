@@ -11,7 +11,7 @@ import Input from './Components/Input/InputLog';
 const Login = () => {
 
     //Estados
-    const [user, setUser] = useState(''); 
+    const [user, setUser] = useState('');
     const [password, setPassword] = useState(''); 
     const [passwordError, setPasswordError]=useState(false);
 
