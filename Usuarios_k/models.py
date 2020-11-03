@@ -90,5 +90,3 @@ def tokens(self):
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
-
-        
