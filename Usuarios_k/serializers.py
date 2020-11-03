@@ -28,7 +28,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         return customUser
 
     #Verificacion de cuenta:
-    class EmailVerificationSerializer(serializers.ModelSerializer):
+class EmailVerificationSerializer(serializers.ModelSerializer):
         token = serializers.CharField(max_length=555)
         class Meta:
           model = CustomUser
