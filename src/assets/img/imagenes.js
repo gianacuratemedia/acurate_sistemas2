@@ -4,14 +4,17 @@ import fondo from './fondo1.jpg';
 import fondo2 from './fondo2.jpg';
 import profesor from './persona1.jpg';
 import registro from './registro.PNG';
+import estrellas from './Estrellas.png';
+import comparte from './comparte.png';
 
 
 export default {
-
     "img1": azul,
     "img2": blanco,
     "img3": fondo,
     "img4": fondo2,
     "img5": profesor,
-    "registro": registro
+    "registro": registro,
+    "estrellas": estrellas,
+    "comparte": comparte
 }

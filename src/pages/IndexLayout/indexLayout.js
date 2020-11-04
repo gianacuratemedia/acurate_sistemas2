@@ -2,7 +2,6 @@ import React from "react";
 import "../../assets/css/indexLayout.css";
 import "../../assets/css/stylesprofesores.css";
 
-
 import imagenes from "../../assets/img/imagenes";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
@@ -73,7 +72,33 @@ function App() {
         </form>
       </div>
 
-      <div class="section white">
+      <div class="section-white1">
+        <div class="row container">
+
+        <div class="container-avanza">
+          <img className="estrella" src= {imagenes.estrellas}/>
+          <div class="titulo-estrella">+600 cursos en linea</div>
+          <div class= "desc-estrella">Encuentra tu curso ideal y aprende habilidades nuevas en menos de 2 horas</div>
+        </div>
+
+        <div class="container-instruccion">
+            <img className="estrella" src= {imagenes.estrellas}/>
+            <div class="titulo-estrella">Avanza a tu propio ritmo</div>
+            <div class= "desc-estrella">Disfruta de acceso exclusivo a cursos en línea a tu propio horario y ritmo</div>
+        </div>
+
+        <div class="container-mas">
+          <img className="estrella" src= {imagenes.estrellas}/>
+          <div class="titulo-estrella">Instrucción Experta</div>
+          <div class= "desc-estrella">Encuentra el instructor adecuado y aprende de los expertos de la industria</div>
+        </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="section white2">
         <div class="row container">
           <h2 class="header center">Conoce a tus profesores</h2>
 
@@ -121,39 +146,62 @@ function App() {
         </div>
       </div>
 
-      <div class="parallax-container">
-        <div class="parallax">
-          <img src={imagenes.img4} />
+      <div class="section-white3">
+        <div class="row container">
+
+        <div class="container-comparte">
+          <div class="comparte">
+            Comparte tu conocimiento<br></br> 
+            y crea tu propio curso<br></br>
+          </div>
+          <div class= "desc-comparte">
+            Sácale el maximo provecho a tu pasión. Crea un<br></br>
+            curso para miles de personas de todo el mundo<br></br>
+            y genera mas ingresos por tus conocimientos<br></br>
+          </div>
+        </div>
+
+        <img className="imagen-comparte" src= {imagenes.comparte}/>
+
         </div>
       </div>
 
 
-      <div class="section white">
-        <div class="row container">
-          <div class="mas-600">
-            <div class="header center">+600 cursos en linea</div>
-          </div>
-          <div class="avanza-ritmo">
-            <div class="header center">Avanza a tu propio ritmo</div>
-          </div>
-          <div class="instruccion-experta">
-            <div class="header center">Instrucción Experta</div>
-          </div>
-        </div>
-      </div>
+      <div class="section-white4">
 
-      {/*Encuentra tu pasión */}
-      <div class="section white">
+        <div class="planes-pago">Planes de pago</div>
+
+        <hr class="hline"></hr>
+
         <div class="row container">
-          <div class="mas-600">
-            <div class="header center">+600 cursos en linea</div>
-          </div>
-          <div class="avanza-ritmo">
-            <div class="header center">Avanza a tu propio ritmo</div>
-          </div>
-          <div class="instruccion-experta">
-            <div class="header center">Instrucción Experta</div>
-          </div>
+
+        <div class="container-gratis">
+          <div class="titulo-plan">Prueba Gratis</div>
+          <div class= "desc-plan"><strong>$0.00</strong> / al mes</div>
+          
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
+        <div class="container-mensual">
+          <div class="titulo-plan">Prueba mensual</div>
+          <div class= "desc-plan"><strong>$9.00</strong> / al mes</div>
+
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
+        <div class="container-anual">
+          <div class="titulo-plan">Prueba anual</div>
+          <div class= "desc-plan"><strong>$79.00</strong> / al mes</div>
+
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
         </div>
       </div>
 
