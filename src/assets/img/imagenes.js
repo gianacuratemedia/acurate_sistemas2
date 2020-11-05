@@ -6,6 +6,7 @@ import profesor from './persona1.jpg';
 import registro from './registro.PNG';
 import estrellas from './Estrellas.png';
 import comparte from './comparte.png';
+import logoazul from './logoazul.png';
 
 
 export default {
@@ -16,5 +17,6 @@ export default {
     "img5": profesor,
     "registro": registro,
     "estrellas": estrellas,
-    "comparte": comparte
+    "comparte": comparte,
+    "logoazul": logoazul
 }

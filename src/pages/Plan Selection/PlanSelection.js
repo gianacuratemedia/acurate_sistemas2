@@ -5,12 +5,11 @@ import imagenes from '../../assets/img/imagenes';
 
 import './PlanSelection.css';
 
-import Title from './Components/Title Plan/TitlePlan';
 import Label from './Components/Label Plan/LabelPlan';
 import Input from './Components/Input Plan/InputPlan'; 
 
 
-const Register = () => {
+const PlanSelection = () => {
 
     //Estados
     const [user, setUser] = useState(''); //Buscar
@@ -43,77 +42,118 @@ const Register = () => {
     };
 
     return (
-        <div className= 'regcont'>
+        <div className= 'plancont'>
 
-            <Title text= 'Knowture'> </Title>
-            <div className='aprende'> ¡Aprende donde sea! </div>
-            <div className='inscribete'> Inscribete y comienza a aprender  </div>
-            <br></br>
-            
-            <Label text='Nombre de usuario'> </Label> 
-            <div className='inputNombre'>
-            <Input
-            attribute={{ //Apartado usuario
-                id: 'nombreUsuario',
-                name: 'nombreUsuario',
-                type: 'text',
-                placeholder: 'Nombre de Usuario'
-            }}
-            handleChange={handleChange}
-            >
-            </Input>
+            <div className="section-right">
+            <div className="headerSection">
+            <img className="logo" src= {imagenes.logoazul}/>
             </div>
 
-            <Label text='Correo electrónico'> </Label> 
-            <div className='inputUsuario'>
-            <Input
-            attribute={{ //Apartado usuario
-                id: 'usuario',
-                name: 'usuario',
-                type: 'text',
-                placeholder: 'nombreusuario@hotmail.com'
-            }}
-            handleChange={handleChange}
-            >
-            </Input>
+            <div className='comienza'> 
+                Comienza 15 días gratis   
             </div>
 
+            <div className='compromiso'> 
+                Sin compromiso. Cancela cuando quieras.  
+            </div>
 
-            <Label text='Contraseña'> </Label>
-            <div className='inputContraseñaReg'>
-            <Input
-            attribute={{ //Apartado contraseña
-                id: 'contraseña',
-                name: 'contraseña',
-                type: 'password',
-                placeholder: 'Ingrese su contraseña'
-            }}
-            handleChange={handleChange}
-            param={passwordError}
-            >
-            </Input>
+            <div className='plan'> 
+                Selecciona tu plan  
             </div>
             
-            <div className='boton-inicio-container'> 
-            <button onClick={handleSubmit} className='boton-inicio-sesion'> 
+
+            <div class="container-gratis">
+                <div class="titulo-plan">Prueba Gratis</div>
+                <div class= "desc-plan"><strong>$0.00</strong> / al mes</div>
+          
+                <a className="boton-conviertete" href="#">
+                    ¡Conviértete en Premium!
+                </a>
+            </div>
+
+            <div class="container-mensual">
+                <div class="titulo-plan">Prueba mensual</div>
+                <div class= "desc-plan"><strong>$9.00</strong> / al mes</div>
+
+                <a className="boton-conviertete" href="#">
+                    ¡Conviértete en Premium!
+                </a>
+            </div>
+
+            <div class="container-anual">
+                <div class="titulo-plan">Prueba anual</div>
+                <div class= "desc-plan"><strong>$79.00</strong> / al mes</div>
+
+                <a className="boton-conviertete" href="#">
+                    ¡Conviértete en Premium!
+                </a>
+            </div>
+
+
+            <Label text='Selecciona tu forma de pago'> </Label> 
+            <div>
+                <input type="radio" value="credito" name="pago" /> Crédito o débito
+                <input type="radio" value="paypal" name="pago" /> PayPal
+            </div>
+
+            <Label text='Número de tarjeta'> </Label> 
+            <div className='inputTarjeta'>
+            <Input
+            attribute={{ //Apartado usuario
+                id: 'numTarjeta',
+                name: 'numTarjeta',
+                type: 'text'
+            }}
+            handleChange={handleChange}
+            >
+            </Input>
+            </div>
+
+            <Label text='Expiración'> </Label> 
+            <div className='inputExpiracion'>
+            <Input
+            attribute={{ //Apartado usuario
+                id: 'numExpiracion',
+                name: 'numExpiracion',
+                type: 'text',
+                placeholder: 'MM/YY'
+            }}
+            handleChange={handleChange}
+            >
+            </Input>
+            </div>
+            
+            <Label text='Código de seguridad'> </Label> 
+            <div className='inputCodigo'>
+            <Input
+            attribute={{ //Apartado usuario
+                id: 'numCodigo',
+                name: 'numCodigo',
+                type: 'text'
+            }}
+            handleChange={handleChange}
+            >
+            </Input>
+            </div>
+            
+            
+            <Label text='Ingresa cupón de descuento'> </Label> 
+            <div className='boton-continuar-container'> 
+            <button onClick={handleSubmit} className='boton-continuar-seleccion'> 
                 {/*<link to={"/register"}> Enlace a pagina*/}
-                Registrate
+                Continuar
                 {/*</link>*/}
             </button>
             </div> 
-
-            <div className='cuenta'> 
-                ¿Ya tienes una cuenta?   
             </div>
 
             <a className='inicia' href="#example"> 
                 Inicia Sesión  
             </a> 
 
-            <img className="registro" src= {imagenes.registro}/>
                 
         </div> 
     )
 };
 
-export default Register;
+export default PlanSelection;

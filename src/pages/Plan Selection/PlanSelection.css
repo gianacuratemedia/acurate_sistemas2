@@ -1,4 +1,4 @@
-.regcont{
+.plancont{
     display: flex;
     flex-direction: column;
     color: black;
@@ -30,6 +30,14 @@
   .boton-inicio-sesion:active{
     transform: scale(.99);
   }
+
+.headerSection{
+  background-color: blue;
+}
+
+
+
+
 
   .aprende{
     margin-left: 120px; 
