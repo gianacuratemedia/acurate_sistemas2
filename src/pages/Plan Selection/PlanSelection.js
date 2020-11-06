@@ -42,13 +42,16 @@ const PlanSelection = () => {
     };
 
     return (
-        <div className= 'plancont'>
+    <div className= 'plancont'>
 
-            <div className="section-right">
-            <div className="headerSection">
+        <div className="headerSection">
             <img className="logo" src= {imagenes.logoazul}/>
-            </div>
+        </div>
 
+        <div className="section-left">
+            
+
+        
             <div className='comienza'> 
                 Comienza 15 días gratis   
             </div>
@@ -62,97 +65,82 @@ const PlanSelection = () => {
             </div>
             
 
-            <div class="container-gratis">
-                <div class="titulo-plan">Prueba Gratis</div>
-                <div class= "desc-plan"><strong>$0.00</strong> / al mes</div>
+            <div class="cont-gratis">
+                <div class="tit-plan">Prueba Gratis</div>
+                <div class= "des-plan"><strong>$0.00</strong> / al mes</div>
           
-                <a className="boton-conviertete" href="#">
+                <a className="boton-convierte" href="#">
                     ¡Conviértete en Premium!
                 </a>
             </div>
 
-            <div class="container-mensual">
-                <div class="titulo-plan">Prueba mensual</div>
-                <div class= "desc-plan"><strong>$9.00</strong> / al mes</div>
+            <div class="cont-mensual">
+                <div class="tit-plan">Prueba mensual</div>
+                <div class= "des-plan"><strong>$9.00</strong> / al mes</div>
 
-                <a className="boton-conviertete" href="#">
+                <a className="boton-convierte" href="#">
                     ¡Conviértete en Premium!
                 </a>
             </div>
 
-            <div class="container-anual">
-                <div class="titulo-plan">Prueba anual</div>
-                <div class= "desc-plan"><strong>$79.00</strong> / al mes</div>
+            <div class="cont-anual">
+                <div class="tit-plan">Prueba anual</div>
+                <div class= "des-plan"><strong>$79.00</strong> / al mes</div>
 
-                <a className="boton-conviertete" href="#">
+                <a className="boton-convierte" href="#">
                     ¡Conviértete en Premium!
                 </a>
             </div>
 
 
-            <Label text='Selecciona tu forma de pago'> </Label> 
-            <div>
-                <input type="radio" value="credito" name="pago" /> Crédito o débito
-                <input type="radio" value="paypal" name="pago" /> PayPal
+            <div className="forma-pago"> 
+                Selecciona tu forma de pago
             </div>
-
-            <Label text='Número de tarjeta'> </Label> 
-            <div className='inputTarjeta'>
-            <Input
-            attribute={{ //Apartado usuario
-                id: 'numTarjeta',
-                name: 'numTarjeta',
-                type: 'text'
-            }}
-            handleChange={handleChange}
-            >
-            </Input>
-            </div>
-
-            <Label text='Expiración'> </Label> 
-            <div className='inputExpiracion'>
-            <Input
-            attribute={{ //Apartado usuario
-                id: 'numExpiracion',
-                name: 'numExpiracion',
-                type: 'text',
-                placeholder: 'MM/YY'
-            }}
-            handleChange={handleChange}
-            >
-            </Input>
-            </div>
-            
-            <Label text='Código de seguridad'> </Label> 
-            <div className='inputCodigo'>
-            <Input
-            attribute={{ //Apartado usuario
-                id: 'numCodigo',
-                name: 'numCodigo',
-                type: 'text'
-            }}
-            handleChange={handleChange}
-            >
-            </Input>
-            </div>
-            
-            
-            <Label text='Ingresa cupón de descuento'> </Label> 
-            <div className='boton-continuar-container'> 
-            <button onClick={handleSubmit} className='boton-continuar-seleccion'> 
-                {/*<link to={"/register"}> Enlace a pagina*/}
-                Continuar
-                {/*</link>*/}
-            </button>
-            </div> 
-            </div>
-
-            <a className='inicia' href="#example"> 
-                Inicia Sesión  
+            <a className='boton-paypal' href="#example"> 
+                Paga con PayPal  
             </a> 
 
-                
-        </div> 
+            <div className="cupon"> 
+                Ingresa cupón de descuento
+            </div>
+
+            <a className='boton-continuar' href="#example"> 
+                Continuar  
+            </a> 
+
+
+        </div>
+
+        <div class="section-right">
+
+            <div className="beneficio"> 
+                Beneficios Premium
+            </div>
+
+            <div class="row container">
+
+            <div class="cont-avanza">
+            <img className="estrellas" src= {imagenes.estrellas}/>
+            <div class="tit-estrella">+600 cursos en linea</div>
+            <div class= "des-estrella">Encuentra tu curso ideal y aprende habilidades nuevas en menos de 2 horas</div>
+            </div>
+
+            <div class="cont-instruccion">
+                <img className="estrellas" src= {imagenes.estrellas}/>
+                <div class="tit-estrella">Avanza a tu propio ritmo</div>
+                <div class= "des-estrella">Disfruta de acceso exclusivo a cursos en línea a tu propio horario y ritmo</div>
+            </div>
+
+            <div class="cont-mas">
+            <img className="estrellas" src= {imagenes.estrellas}/>
+            <div class="tit-estrella">Instrucción Experta</div>
+            <div class= "des-estrella">Encuentra el instructor adecuado y aprende de los expertos de la industria</div>
+            </div>
+
+        </div>
+      </div>
+         
+    </div> 
     )
 };
 

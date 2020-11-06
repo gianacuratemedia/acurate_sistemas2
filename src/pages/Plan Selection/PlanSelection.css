@@ -4,93 +4,257 @@
     color: black;
 }
 
-.boton-inicio-container{
-    position: relative;
-    left: 150px; 
-    top: 25px; 
-    display: flex;
-
-}
-
-.boton-inicio-sesion{
-    /*text-decoration: none;*/
-    width: 400px;
-    padding: 0 1.5em;
-    color: white;
-    border-radius: 2em;
-    font-size: 15px;
-    font-weight: bold;
-    display: inline-block;
-    background: rgb(192, 108, 12);
-    line-height: 3;
-  }
-  .boton-inicio-sesion:hover{
-    background-color: rgb(197, 120, 5);
-  }
-  .boton-inicio-sesion:active{
-    transform: scale(.99);
-  }
-
 .headerSection{
-  background-color: blue;
+  background-color: white;
+  z-index: 2;
+  height: 130px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: #cecccc;
+}
+
+.logo{
+  width: 250px;
+  height: 60px;
+  margin-left: 40px;
+  margin-top: 30px;
 }
 
 
+.section-left{
+  width: 900px;
+  height: 1300px;
+  background-color: white;
+}
 
 
+.comienza{
+  margin-top: 70px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
 
-  .aprende{
-    margin-left: 120px; 
-    margin-top: 15px; 
-    justify-content: center;
-    color: gray;
-    font-weight: bold;
-    font-size: 40px;
-  }
+.compromiso{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: gray;
+}
 
-  .inscribete{
-    margin-left: 200px; 
-    margin-top: 25px; 
-    justify-content: center;
-    color: silver;
-    font-size: 15px;
-    font-weight: bold;
-  }
+.plan{
+  margin-top: 100px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: blue;
 
-  .cuenta{
-    margin-left: 340px; 
-    margin-top: 50px;
-    color: gray;
-    font-size: 15px;
-  }
+}
 
-  .inicia{
-    margin-left: 510px; 
-    margin-top: -21px; 
-    color: rgba(44, 75, 142, 1);
-    font-weight: bold;
-    font-size: 15px;
-  }
 
-  .registro{
-    width: 670px;
-    height:656px;
-    margin-left: 679px;
-    margin-top: 1px;
-    /*margin: 0px 0px 0px 0px;*/
-    position: absolute;
-  }
+.tit-plan{
+  font-family : "Avenir Next";
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
 
-  .inputNombre{
-    width: 500px;
-  }
+.des-plan{
+  padding: 20px 20px 20px 20px;
+  font-family : "Avenir Next";
+  font-size: 15px;
+  text-align: center;
+}
 
-  .inputUsuario{
-    width: 500px;
-  }
+.cont-gratis{
+  width: 250px;
+  height: 400px;
+  margin-left: 50px;
+  margin-top: 60px;
+  position: absolute;
+  background-color: white;
+  padding: 40px 20px 20px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 10px #cecccc;
+  z-index: 1;
+}
 
-  .inputContraseñaReg{
-    width: 500px;
-  }
+.cont-mensual{
+  width: 250px;
+  height: 400px;
+  margin-left: 300px;
+  margin-top: 60px;
+  position: absolute;
+  background-color:white;
+  padding: 40px 20px 20px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 10px #cecccc;
+  z-index: 3;
+}
 
- 
+.cont-anual{
+  width: 250px;
+  height: 400px;
+  margin-left: 550px;
+  margin-top: 60px;
+  position: absolute;
+  background-color:white;
+  padding: 40px 20px 20px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px 10px #cecccc;
+  z-index: 2;
+}
+
+.boton-convierte{
+  text-decoration: none;
+  position: absolute;
+  margin-top: 28vh;
+  margin-left: 1vh;
+  display: inline-block;
+  background: rgba(192, 108, 12, 0.877);
+  line-height: 30px;
+  width: 200px;
+  padding: 0.5em 0.5em;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+
+}
+.boton-convierte:hover{
+  background-color: rgb(197, 120, 5);
+}
+.boton-convierte:active{
+  transform: scale(.99);
+}
+
+.forma-pago{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: blue;
+  margin-left: 50px;
+  margin-top: 550px;
+}
+
+.boton-paypal{
+  text-decoration: none;
+  position: absolute;
+  margin-top: 8vh;
+  margin-left: 15vh;
+  display: inline-block;
+  background: rgba(192, 108, 12, 0.877);
+  line-height: 30px;
+  width: 200px;
+  padding: 0.5em 0.5em;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+
+}
+.boton-paypal:hover{
+  background-color: rgb(197, 120, 5);
+}
+.boton-paypal:active{
+  transform: scale(.99);
+}
+
+
+.cupon{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: blue;
+  margin-left: 50px;
+  margin-top: 200px;
+}
+
+.boton-continuar{
+  text-decoration: none;
+  position: absolute;
+  margin-top: 10vh;
+  margin-left: 15vh;
+  display: inline-block;
+  background: rgba(192, 108, 12, 0.877);
+  line-height: 30px;
+  width: 200px;
+  padding: 0.5em 0.5em;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+
+}
+.boton-continuar:hover{
+  background-color: rgb(197, 120, 5);
+}
+.boton-continuar:active{
+  transform: scale(.99);
+}
+
+
+.section-right{
+  width: 449px;
+  height: 1430px;
+  background-color: whitesmoke;
+  position: absolute;
+  margin-left: 900px;
+  z-index: 1;
+
+}
+
+.beneficio{
+  margin-top: 390px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cont-avanza{
+  width: 250px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 60px;
+  position: absolute;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+}
+
+.cont-instruccion{
+  width: 250px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 350px;
+  position: absolute;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+}
+
+.cont-mas{
+  width: 250px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 650px;
+  position: absolute;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+}
+
+.tit-estrella{
+  font-family : "Avenir Next";
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.des-estrella{
+  padding: 20px 20px 20px 20px;
+  font-family : "Avenir Next";
+  font-size: 12px;
+  text-align: center;
+}
+
+.estrellas{
+  margin-left: 50px;
+  margin-top: -35px;
+}
+
+
