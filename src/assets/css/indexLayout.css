@@ -101,27 +101,40 @@ color: rgb(119, 118, 118);
   height: 800px !important;
 }
 
+
+.header-center{
+  position: relative;
+  left: 250px;
+  font-size: 30px;
+  width: 500px;
+  text-align: center;
+}
 .azul{
   position: relative;
-  width: 250px;
-  margin-left: 30px;
-  margin-top: -29px;
+  width: 350px;
+  height: 500px;
+  left: 30px;
+  top: 10px;
   }
 
   .texto{
     position: absolute;
-    color: rgb(255, 255, 255);
-    margin: 16vh;
+    margin-top: 1vh;
+    margin-left: 65vh;
     -webkit-text-stroke: 1px black;
+    text-align: center;
+    font-size: 6vh;
+
   }
 
   .parrafoPrincipal{
     position: absolute;
-    color: white;
     font-size: 3vh;
-    margin-top: 35vh;
-    margin-left: 16vh;
+    margin-top: 20vh;
+    margin-left: 70vh;
     -webkit-text-stroke: .6px black;
+    text-align: center;
+    
   }
 
   .boton{
@@ -165,11 +178,16 @@ color: rgb(119, 118, 118);
     display: inline-block;
     background: rgb(66, 12, 214);
     line-height: 2;
-    width: 110px;
-    padding: 0 1.5em;
+    width: 290px;
+    height: 60px;
+    /*padding: 1em;*/
+    text-align: center;
     color: white;
-    border-radius: 2em;
+    border-radius: 5px;
     font-size: 18px;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
     }
 
     .boton-unete:hover{
@@ -178,6 +196,35 @@ color: rgb(119, 118, 118);
   .boton-unete:active{
     transform: scale(.99);
   }
+
+  .boton-iniciar{
+    text-decoration: none;
+    /* position: fixed; */
+    /* margin: 20px 0px 0px 500px; */
+    display: inline-block;
+    background: rgb(66, 12, 214);
+    line-height: 2;
+    width: 290px;
+    height: 60px;
+    /*padding: 1em;*/
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 100px;
+    font-size: 25px;
+    position: absolute;
+    font-weight: bold;
+
+    }
+
+
+  .boton-iniciar:hover{
+    background: rgb(12, 12, 187);
+  }
+.boton-iniciar:active{
+  transform: scale(.99);
+}
 
 
 
@@ -200,7 +247,7 @@ color: rgb(119, 118, 118);
   .container-mas{
     width: 350px;
     height: 350px;
-    margin-top: 80px;
+    margin-top: 100px;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }
@@ -208,7 +255,7 @@ color: rgb(119, 118, 118);
   .container-avanza{
     width: 350px;
     height: 350px;
-    margin-top: 80px;
+    margin-top: 100px;
     background-color: white;
     padding: 20px 20px 20px 20px;
 
@@ -217,7 +264,7 @@ color: rgb(119, 118, 118);
   .container-instruccion{
     width: 350px;
     height: 350px;
-    margin-top: 80px;
+    margin-top: 250px;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }
@@ -231,19 +278,19 @@ color: rgb(119, 118, 118);
     margin-top: 5%;
   }
 
-  .container-comparte{margin-top: 6%;}
+  .container-comparte{margin-top: 6%; margin-left: -10%;}
 
   .comparte{
     color: rgba(44, 75, 142, 1);
     font-family : "Avenir Next";
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
   }
 
   .desc-comparte{
     color: black;
     font-family : "Avenir Next";
-    font-size: 30px;
+    font-size: 25px;
   }
   .section-white4{
     height: 650px;
@@ -281,7 +328,7 @@ color: rgb(119, 118, 118);
   }
 
   .container-gratis{
-    width: 350px;
+    width: 300px;
     height: 450px;
     margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);
@@ -290,7 +337,7 @@ color: rgb(119, 118, 118);
   }
 
   .container-mensual{
-    width: 350px;
+    width: 300px;
     height: 450px;
     margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);
@@ -300,7 +347,7 @@ color: rgb(119, 118, 118);
 
 
   .container-anual{
-    width: 350px;
+    width: 300px;
     height: 450px;
     margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);

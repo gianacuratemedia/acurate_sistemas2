@@ -24,41 +24,24 @@ function App() {
         <nav className="transparent z-depth-0">
           <div class="nav-wrapper">
             <a href="#" class="brand-logo">
-              <img className="azul responsive-img" src={imagenes.img2} />
+              <img className="azul responsive-img" src={imagenes.logoazul} />
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
               <Link to="/login">
-                <a>Iniciar Sesión</a>
+                <a class="boton-iniciar">Iniciar Sesión</a>
                 </Link>
               </li>
               <li>
                 <Link to="/register">
-                  <a className="boton-unete">¡Unete!</a>
+                  <a className="boton-unete">¡Unete a nosotros!</a>
                 </Link>
               </li>
             </ul>
           </div>
         </nav>
 
-        <div className="texto">
-          <h2>
-            Aprende de manera eficiente,<br></br>
-            con los mejores profesores.
-          </h2>
-        </div>
-        <p className="parrafoPrincipal">
-          Somos una plataforma de contenido en<br></br>
-          streaming. Nuestros programas permiten terminar<br></br>
-          cursos enteros en 15 minutos en el formato que<br></br>
-          prefieran con mas de 600 contenidos en áreas
-        </p>
 
-        <div>
-          <Link to="/register">
-            <a className="boton">¡Unete a nosotros!</a>
-          </Link>
-        </div>
 
         <form>
           <div className="barraBusqueda">
@@ -76,6 +59,16 @@ function App() {
       </div>
 
       <div class="section-white1">
+        <div className="texto">
+            Aprende de manera eficiente,<br></br>
+            con los mejores profesores.
+        </div>
+        <p className="parrafoPrincipal">
+          Somos una plataforma de contenido en<br></br>
+          streaming. Nuestros programas permiten terminar<br></br>
+          cursos enteros en 15 minutos en el formato que<br></br>
+          prefieran con mas de 600 contenidos en áreas
+        </p>
         <div class="row container">
           <div class="container-avanza center col s12 l4">
             <img className="estrella" src={imagenes.estrellas} />
@@ -108,7 +101,7 @@ function App() {
 
       <div class="section white2">
         <div class="row container">
-          <h2 class="header center">Conoce a tus profesores</h2>
+          <div class="header-center">Conoce a tus profesores</div>
 
           <div className="col s4">
             <div className="item center">
@@ -186,7 +179,7 @@ function App() {
           </div>
           <div className="col l4 center">
             <div class="container-gratis">
-              <div class="titulo-plan">Prueba Gratis</div>
+              <div class="titulo-plan">Prueba gratis</div>
               <div class="desc-plan">
                 <strong>$0.00</strong> / al mes
               </div>
