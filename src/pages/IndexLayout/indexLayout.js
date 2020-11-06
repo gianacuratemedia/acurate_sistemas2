@@ -205,6 +205,35 @@ function App() {
         </div>
       </div>
 
+      <div class="section-footer">
+        
+        <img className="logo-footer" src= {imagenes.logoazul}/>
+        {/*<hr class="hline2"></hr>*/}
+
+        <div class="inc">Knowtured, Inc. 2020</div>
+        <a className="ayuda" href="#"> Ayuda </a>
+        <a className="privacidad" href="#"> Privacidad </a>
+        <a className="terminos" href="#"> Términos y Condiciones</a>
+
+        <div className="links-1"> 
+          <a className="sobre" href="#"> Sobre nosotros </a>
+          <a className="contacto" href="#"> Contáctanos </a>
+          <a className="asociaciones" href="#"> Asociaciones </a>
+        </div>
+
+        <div className="links-2"> 
+          <a className="premium" href="#"> Conviértete en Premium </a>
+          <a className="planes" href="#"> Planes de pago </a>
+          <a className="becas" href="#"> Becas escolares </a>
+        </div>
+
+        <div className="links-3">
+          <a className="enseña" href="#"> Enseña en Knowtured </a>
+          <a className="cursos" href="#"> Cursos Knowtured </a>
+          <a className="comunidad" href="#"> Comunidad </a>
+        </div>
+
+      </div>
 
     </div>
   );

@@ -363,3 +363,125 @@ color: rgb(119, 118, 118);
   .boton-conviertete:active{
     transform: scale(.99);
   }
+
+
+  .section-footer{
+    background-color: rgb(12, 12, 187);
+    height: 300px;
+  }
+
+  .logo-footer{
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 380px;
+    height: 100px;
+  }
+
+  .inc{
+    margin-left: 50px;
+    margin-top: 50px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .ayuda{
+    position: absolute;
+    margin-left: 180px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .privacidad{
+    position: absolute;
+    margin-left: 230px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .terminos{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .sobre{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .contacto{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .asociaciones{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+
+  .premium{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .planes{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .becas{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+  .enseña{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .cursos{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .comunidad{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+
