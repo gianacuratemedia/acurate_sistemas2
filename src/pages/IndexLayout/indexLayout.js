@@ -2,7 +2,6 @@ import React from "react";
 import "../../assets/css/indexLayout.css";
 import "../../assets/css/stylesprofesores.css";
 
-
 import imagenes from "../../assets/img/imagenes";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
@@ -73,7 +72,33 @@ function App() {
         </form>
       </div>
 
-      <div class="section white">
+      <div class="section-white1">
+        <div class="row container">
+
+        <div class="container-avanza">
+          <img className="estrella" src= {imagenes.estrellas}/>
+          <div class="titulo-estrella">+600 cursos en linea</div>
+          <div class= "desc-estrella">Encuentra tu curso ideal y aprende habilidades nuevas en menos de 2 horas</div>
+        </div>
+
+        <div class="container-instruccion">
+            <img className="estrella" src= {imagenes.estrellas}/>
+            <div class="titulo-estrella">Avanza a tu propio ritmo</div>
+            <div class= "desc-estrella">Disfruta de acceso exclusivo a cursos en línea a tu propio horario y ritmo</div>
+        </div>
+
+        <div class="container-mas">
+          <img className="estrella" src= {imagenes.estrellas}/>
+          <div class="titulo-estrella">Instrucción Experta</div>
+          <div class= "desc-estrella">Encuentra el instructor adecuado y aprende de los expertos de la industria</div>
+        </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="section white2">
         <div class="row container">
           <h2 class="header center">Conoce a tus profesores</h2>
 
@@ -121,11 +146,95 @@ function App() {
         </div>
       </div>
 
-      <div class="parallax-container">
-        <div class="parallax">
-          <img src={imagenes.img4} />
+      <div class="section-white3">
+        <div class="row container">
+
+        <div class="container-comparte">
+          <div class="comparte">
+            Comparte tu conocimiento<br></br> 
+            y crea tu propio curso<br></br>
+          </div>
+          <div class= "desc-comparte">
+            Sácale el maximo provecho a tu pasión. Crea un<br></br>
+            curso para miles de personas de todo el mundo<br></br>
+            y genera mas ingresos por tus conocimientos<br></br>
+          </div>
+        </div>
+
+        <img className="imagen-comparte" src= {imagenes.comparte}/>
+
         </div>
       </div>
+
+
+      <div class="section-white4">
+
+        <div class="planes-pago">Planes de pago</div>
+
+        <hr class="hline"></hr>
+
+        <div class="row container">
+
+        <div class="container-gratis">
+          <div class="titulo-plan">Prueba Gratis</div>
+          <div class= "desc-plan"><strong>$0.00</strong> / al mes</div>
+          
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
+        <div class="container-mensual">
+          <div class="titulo-plan">Prueba mensual</div>
+          <div class= "desc-plan"><strong>$9.00</strong> / al mes</div>
+
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
+        <div class="container-anual">
+          <div class="titulo-plan">Prueba anual</div>
+          <div class= "desc-plan"><strong>$79.00</strong> / al mes</div>
+
+          <a className="boton-conviertete" href="#">
+            ¡Conviértete en Premium!
+          </a>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="section-footer">
+        
+        <img className="logo-footer" src= {imagenes.logoazul}/>
+        {/*<hr class="hline2"></hr>*/}
+
+        <div class="inc">Knowtured, Inc. 2020</div>
+        <a className="ayuda" href="#"> Ayuda </a>
+        <a className="privacidad" href="#"> Privacidad </a>
+        <a className="terminos" href="#"> Términos y Condiciones</a>
+
+        <div className="links-1"> 
+          <a className="sobre" href="#"> Sobre nosotros </a>
+          <a className="contacto" href="#"> Contáctanos </a>
+          <a className="asociaciones" href="#"> Asociaciones </a>
+        </div>
+
+        <div className="links-2"> 
+          <a className="premium" href="#"> Conviértete en Premium </a>
+          <a className="planes" href="#"> Planes de pago </a>
+          <a className="becas" href="#"> Becas escolares </a>
+        </div>
+
+        <div className="links-3">
+          <a className="enseña" href="#"> Enseña en Knowtured </a>
+          <a className="cursos" href="#"> Cursos Knowtured </a>
+          <a className="comunidad" href="#"> Comunidad </a>
+        </div>
+
+      </div>
+
     </div>
   );
 }

@@ -5,9 +5,9 @@
 }
 
 .boton-inicio-container{
-    position: absolute;
-    margin-left: 100px; 
-    margin-top: 520px; 
+    position: relative;
+    left: 150px; 
+    top: 25px; 
     display: flex;
 
 }
@@ -50,15 +50,15 @@
   }
 
   .cuenta{
-    margin-left: 240px; 
-    margin-top: 100px;
+    margin-left: 340px; 
+    margin-top: 50px;
     color: gray;
     font-size: 15px;
   }
 
   .inicia{
-    margin-left: 400px; 
-    margin-top: -19px; 
+    margin-left: 510px; 
+    margin-top: -21px; 
     color: rgba(44, 75, 142, 1);
     font-weight: bold;
     font-size: 15px;
@@ -72,3 +72,17 @@
     /*margin: 0px 0px 0px 0px;*/
     position: absolute;
   }
+
+  .inputNombre{
+    width: 500px;
+  }
+
+  .inputUsuario{
+    width: 500px;
+  }
+
+  .inputContraseñaReg{
+    width: 500px;
+  }
+
+ 

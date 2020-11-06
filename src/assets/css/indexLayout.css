@@ -178,3 +178,310 @@ color: rgb(119, 118, 118);
   .boton-unete:active{
     transform: scale(.99);
   }
+
+
+
+  .section-white1{
+    height: 480px;
+  }
+
+
+  .titulo-estrella{
+    font-family : "Avenir Next";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .desc-estrella{
+    padding: 20px 20px 20px 20px;
+    font-family : "Avenir Next";
+    font-size: 18px;
+    text-align: center;
+
+  }
+
+  .container-mas{
+    width: 350px;
+    height: 350px;
+    margin-left: 300px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+  }
+
+  .container-avanza{
+    width: 350px;
+    height: 350px;
+    margin-left: -100px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+
+  }
+
+  .container-instruccion{
+    width: 350px;
+    height: 350px;
+    margin-left: 700px;
+    margin-top: 80px;
+    position: absolute;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+  }
+
+  .estrella{
+    margin-left: 100px;
+  }
+
+
+  .section-white3{
+    height: 400px;
+    background-color:rgb(197, 120, 5);
+  }
+
+  .imagen-comparte{
+    position: absolute;
+    margin-left: 497px;
+    margin-top: -255px;
+    width: 650px;
+    height: 400px;
+  }
+
+  .container-comparte{
+    left: -350px;
+    top: 75px;
+    position: relative;
+  }
+
+  .comparte{
+    color: rgba(44, 75, 142, 1);
+    font-family : "Avenir Next";
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .desc-comparte{
+    color: black;
+    font-family : "Avenir Next";
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+  .section-white4{
+    height: 650px;
+  }
+
+  .planes-pago{
+    margin-top: 70px;
+    text-align: center;
+    font-family : "Avenir Next";
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(12, 12, 187);
+    padding: 0px 0px 0px 0px;
+  }
+ 
+  .hline{
+    border-style: solid;
+    margin-left: 320px;
+    width: 700px;
+    height: 3px;
+    background-color: rgb(12, 12, 187);
+    color: rgb(12, 12, 187);
+  }
+
+  .titulo-plan{
+    font-family : "Avenir Next";
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .desc-plan{
+    padding: 20px 20px 20px 20px;
+    font-family : "Avenir Next";
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .container-gratis{
+    width: 350px;
+    height: 450px;
+    margin-left: 300px;
+    margin-top: 60px;
+    position: absolute;
+    background-color:rgba(244, 183, 196, 0.8);
+    padding: 40px 20px 20px 20px;
+    border-radius: 25px;
+  }
+
+  .container-mensual{
+    width: 350px;
+    height: 450px;
+    margin-left: -100px;
+    margin-top: 60px;
+    position: absolute;
+    background-color:rgba(244, 183, 196, 0.8);
+    padding: 40px 20px 20px 20px;
+    border-radius: 25px;
+  }
+
+  .container-anual{
+    width: 350px;
+    height: 450px;
+    margin-left: 700px;
+    margin-top: 60px;
+    position: absolute;
+    background-color:rgba(244, 183, 196, 0.8);
+    padding: 40px 20px 20px 20px;
+    border-radius: 25px;
+  }
+
+  .boton-conviertete{
+    text-decoration: none;
+    position: absolute;
+    margin-top: 35vh;
+    margin-left: 8vh;
+    display: inline-block;
+    background: rgba(192, 108, 12, 0.877);
+    line-height: 30px;
+    width: 200px;
+    padding: 0.5em 0.5em;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+  
+  }
+  .boton-conviertete:hover{
+    background-color: rgb(197, 120, 5);
+  }
+  .boton-conviertete:active{
+    transform: scale(.99);
+  }
+
+
+  .section-footer{
+    background-color: rgb(12, 12, 187);
+    height: 300px;
+  }
+
+  .logo-footer{
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 380px;
+    height: 100px;
+  }
+
+  .inc{
+    margin-left: 50px;
+    margin-top: 50px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .ayuda{
+    position: absolute;
+    margin-left: 180px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .privacidad{
+    position: absolute;
+    margin-left: 230px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .terminos{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -18px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .sobre{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .contacto{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .asociaciones{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+
+  .premium{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .planes{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .becas{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+  .enseña{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .cursos{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -90px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .comunidad{
+    position: absolute;
+    margin-left: 1100px;
+    margin-top: -30px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+

@@ -6,15 +6,15 @@
     color: black;
 }
 
-.boton-inicio-container{
-    position: absolute;
-    margin-left: 500px; 
-    margin-top: 320px; 
+.boton-iniciaSesion-container{
+    position: relative;
+    left: 480px; 
+    top: 50px; 
     display: flex;
 
 }
 
-.boton-inicio-sesion{
+.boton-inicia-sesion{
     /*text-decoration: none;*/
     width: 400px;
     padding: 0 1.5em;
@@ -34,24 +34,50 @@
   }
 
   .olvide{
-    margin-left: 730px; 
-    margin-top: 15px; 
+    margin-left: 760px; 
+    margin-top: -45px; 
     color: gray;
     text-decoration: underline;
     font-size: 15px;
   }
 
-  .cuenta{
-    margin-left: 650px; 
-    margin-top: 90px;
+  .cuentaLog{
+    margin-left: 685px; 
+    margin-top: 100px;
     color: gray;
     font-size: 15px;
   }
 
   .registrate{
-    margin-left: 830px; 
-    margin-top: -20px; 
+    margin-left: 855px; 
+    margin-top: -22px; 
     color: rgba(44, 75, 142, 1);
     font-weight: bold;
     font-size: 15px;
   }
+
+  .titulo{
+    margin-left: 340px;
+  }
+
+  .labelCorreo{
+    margin-left: 330px;
+
+  }
+  
+  .inputCorreo{
+    width: 500px;
+    margin-left: 330px;
+  }
+
+  .inputContraseña{
+    width: 500px;
+    margin-left: 330px;
+  }
+
+
+  .labelContraseña{
+    margin-left: 330px;
+
+  }
+  

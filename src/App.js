@@ -8,6 +8,7 @@ import index from "./pages/IndexLayout/indexLayout";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Pay from './pages/pay/pay';
+import PlanSelection from "./pages/Plan Selection/PlanSelection";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/pay" component={Pay}/>
+        <Route exact path="/planselection" component={PlanSelection} />
       </Switch>
     </BrowserRouter>
   );
