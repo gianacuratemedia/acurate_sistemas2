@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../assets/css/indexLayout.css";
 import "../../assets/css/stylesprofesores.css";
 
@@ -27,12 +28,14 @@ function App() {
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
-                <a href="#">Iniciar Sesión</a>
+              <Link to="/login">
+                <a>Iniciar Sesión</a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="boton-unete">
-                  ¡Unete!
-                </a>
+                <Link to="/register">
+                  <a className="boton-unete">¡Unete!</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,9 +55,9 @@ function App() {
         </p>
 
         <div>
-          <a className="boton" href="#">
-            ¡Unete a nosotros!
-          </a>
+          <Link to="/register">
+            <a className="boton">¡Unete a nosotros!</a>
+          </Link>
         </div>
 
         <form>
@@ -74,29 +77,34 @@ function App() {
 
       <div class="section-white1">
         <div class="row container">
+          <div class="container-avanza center col s12 l4">
+            <img className="estrella" src={imagenes.estrellas} />
+            <div class="titulo-estrella">+600 cursos en linea</div>
+            <div class="desc-estrella">
+              Encuentra tu curso ideal y aprende habilidades nuevas en menos de
+              2 horas
+            </div>
+          </div>
 
-        <div class="container-avanza">
-          <img className="estrella" src= {imagenes.estrellas}/>
-          <div class="titulo-estrella">+600 cursos en linea</div>
-          <div class= "desc-estrella">Encuentra tu curso ideal y aprende habilidades nuevas en menos de 2 horas</div>
-        </div>
-
-        <div class="container-instruccion">
-            <img className="estrella" src= {imagenes.estrellas}/>
+          <div class="container-instruccion center s12 col l4">
+            <img className="estrella" src={imagenes.estrellas} />
             <div class="titulo-estrella">Avanza a tu propio ritmo</div>
-            <div class= "desc-estrella">Disfruta de acceso exclusivo a cursos en línea a tu propio horario y ritmo</div>
-        </div>
+            <div class="desc-estrella">
+              Disfruta de acceso exclusivo a cursos en línea a tu propio horario
+              y ritmo
+            </div>
+          </div>
 
-        <div class="container-mas">
-          <img className="estrella" src= {imagenes.estrellas}/>
-          <div class="titulo-estrella">Instrucción Experta</div>
-          <div class= "desc-estrella">Encuentra el instructor adecuado y aprende de los expertos de la industria</div>
-        </div>
-
+          <div class="container-mas center col s12 l4">
+            <img className="estrella" src={imagenes.estrellas} />
+            <div class="titulo-estrella">Instrucción Experta</div>
+            <div class="desc-estrella">
+              Encuentra el instructor adecuado y aprende de los expertos de la
+              industria
+            </div>
+          </div>
         </div>
       </div>
-
-
 
       <div class="section white2">
         <div class="row container">
@@ -148,93 +156,138 @@ function App() {
 
       <div class="section-white3">
         <div class="row container">
-
-        <div class="container-comparte">
-          <div class="comparte">
-            Comparte tu conocimiento<br></br> 
-            y crea tu propio curso<br></br>
+          <div className="col s6">
+            <div class="container-comparte center">
+              <div class="comparte">
+                Comparte tu conocimiento<br></br>y crea tu propio curso<br></br>
+              </div>
+              <div class="desc-comparte">
+                Sácale el maximo provecho a tu pasión. Crea un<br></br>
+                curso para miles de personas de todo el mundo<br></br>y genera
+                mas ingresos por tus conocimientos<br></br>
+              </div>
+            </div>
           </div>
-          <div class= "desc-comparte">
-            Sácale el maximo provecho a tu pasión. Crea un<br></br>
-            curso para miles de personas de todo el mundo<br></br>
-            y genera mas ingresos por tus conocimientos<br></br>
+
+          <div className="col s6">
+            <img
+              className="imagen-comparte responsive-img"
+              src={imagenes.comparte}
+            />
           </div>
-        </div>
-
-        <img className="imagen-comparte" src= {imagenes.comparte}/>
-
         </div>
       </div>
 
-
       <div class="section-white4">
-
-        <div class="planes-pago">Planes de pago</div>
-
-        <hr class="hline"></hr>
-
         <div class="row container">
+          <div class="planes-pago col s12 center">
+            Planes de pago
+            <div class="divider   "></div>
+          </div>
+          <div className="col l4 center">
+            <div class="container-gratis">
+              <div class="titulo-plan">Prueba Gratis</div>
+              <div class="desc-plan">
+                <strong>$0.00</strong> / al mes
+              </div>
 
-        <div class="container-gratis">
-          <div class="titulo-plan">Prueba Gratis</div>
-          <div class= "desc-plan"><strong>$0.00</strong> / al mes</div>
-          
-          <a className="boton-conviertete" href="#">
-            ¡Conviértete en Premium!
-          </a>
-        </div>
+              <a className="boton-conviertete" href="#">
+                ¡Conviértete en Premium!
+              </a>
+            </div>
+          </div>
 
-        <div class="container-mensual">
-          <div class="titulo-plan">Prueba mensual</div>
-          <div class= "desc-plan"><strong>$9.00</strong> / al mes</div>
+          <div className="col l4 center">
+            <div class="container-mensual">
+              <div class="titulo-plan">Prueba mensual</div>
+              <div class="desc-plan">
+                <strong>$9.00</strong> / al mes
+              </div>
 
-          <a className="boton-conviertete" href="#">
-            ¡Conviértete en Premium!
-          </a>
-        </div>
+              <a className="boton-conviertete" href="#">
+                ¡Conviértete en Premium!
+              </a>
+            </div>
+          </div>
 
-        <div class="container-anual">
-          <div class="titulo-plan">Prueba anual</div>
-          <div class= "desc-plan"><strong>$79.00</strong> / al mes</div>
+          <div className="col l4 center">
+            <div class="container-anual">
+              <div class="titulo-plan">Prueba anual</div>
+              <div class="desc-plan">
+                <strong>$79.00</strong> / al mes
+              </div>
 
-          <a className="boton-conviertete" href="#">
-            ¡Conviértete en Premium!
-          </a>
-        </div>
-
+              <a className="boton-conviertete" href="#">
+                ¡Conviértete en Premium!
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="section-footer">
-        
-        <img className="logo-footer" src= {imagenes.logoazul}/>
+        <img className="logo-footer" src={imagenes.logoazul} />
         {/*<hr class="hline2"></hr>*/}
 
         <div class="inc">Knowtured, Inc. 2020</div>
-        <a className="ayuda" href="#"> Ayuda </a>
-        <a className="privacidad" href="#"> Privacidad </a>
-        <a className="terminos" href="#"> Términos y Condiciones</a>
+        <a className="ayuda" href="#">
+          {" "}
+          Ayuda{" "}
+        </a>
+        <a className="privacidad" href="#">
+          {" "}
+          Privacidad{" "}
+        </a>
+        <a className="terminos" href="#">
+          {" "}
+          Términos y Condiciones
+        </a>
 
-        <div className="links-1"> 
-          <a className="sobre" href="#"> Sobre nosotros </a>
-          <a className="contacto" href="#"> Contáctanos </a>
-          <a className="asociaciones" href="#"> Asociaciones </a>
+        <div className="links-1">
+          <a className="sobre" href="#">
+            {" "}
+            Sobre nosotros{" "}
+          </a>
+          <a className="contacto" href="#">
+            {" "}
+            Contáctanos{" "}
+          </a>
+          <a className="asociaciones" href="#">
+            {" "}
+            Asociaciones{" "}
+          </a>
         </div>
 
-        <div className="links-2"> 
-          <a className="premium" href="#"> Conviértete en Premium </a>
-          <a className="planes" href="#"> Planes de pago </a>
-          <a className="becas" href="#"> Becas escolares </a>
+        <div className="links-2">
+          <a className="premium" href="#">
+            {" "}
+            Conviértete en Premium{" "}
+          </a>
+          <a className="planes" href="#">
+            {" "}
+            Planes de pago{" "}
+          </a>
+          <a className="becas" href="#">
+            {" "}
+            Becas escolares{" "}
+          </a>
         </div>
 
         <div className="links-3">
-          <a className="enseña" href="#"> Enseña en Knowtured </a>
-          <a className="cursos" href="#"> Cursos Knowtured </a>
-          <a className="comunidad" href="#"> Comunidad </a>
+          <a className="enseña" href="#">
+            {" "}
+            Enseña en Knowtured{" "}
+          </a>
+          <a className="cursos" href="#">
+            {" "}
+            Cursos Knowtured{" "}
+          </a>
+          <a className="comunidad" href="#">
+            {" "}
+            Comunidad{" "}
+          </a>
         </div>
-
       </div>
-
     </div>
   );
 }

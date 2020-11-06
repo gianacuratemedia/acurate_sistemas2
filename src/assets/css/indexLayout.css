@@ -184,29 +184,23 @@ color: rgb(119, 118, 118);
   .section-white1{
     height: 480px;
   }
-
-
   .titulo-estrella{
     font-family : "Avenir Next";
     font-size: 20px;
     font-weight: bold;
-    text-align: center;
   }
-
+ 
   .desc-estrella{
     padding: 20px 20px 20px 20px;
     font-family : "Avenir Next";
     font-size: 18px;
-    text-align: center;
-
   }
+
 
   .container-mas{
     width: 350px;
     height: 350px;
-    margin-left: 300px;
     margin-top: 80px;
-    position: absolute;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }
@@ -214,9 +208,7 @@ color: rgb(119, 118, 118);
   .container-avanza{
     width: 350px;
     height: 350px;
-    margin-left: -100px;
     margin-top: 80px;
-    position: absolute;
     background-color: white;
     padding: 20px 20px 20px 20px;
 
@@ -225,96 +217,73 @@ color: rgb(119, 118, 118);
   .container-instruccion{
     width: 350px;
     height: 350px;
-    margin-left: 700px;
     margin-top: 80px;
-    position: absolute;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }
-
-  .estrella{
-    margin-left: 100px;
-  }
-
-
+ 
   .section-white3{
     height: 400px;
     background-color:rgb(197, 120, 5);
   }
 
   .imagen-comparte{
-    position: absolute;
-    margin-left: 497px;
-    margin-top: -255px;
-    width: 650px;
-    height: 400px;
+    margin-top: 5%;
   }
 
-  .container-comparte{
-    left: -350px;
-    top: 75px;
-    position: relative;
-  }
+  .container-comparte{margin-top: 6%;}
 
   .comparte{
     color: rgba(44, 75, 142, 1);
     font-family : "Avenir Next";
     font-size: 40px;
     font-weight: bold;
-    text-align: center;
   }
 
   .desc-comparte{
     color: black;
     font-family : "Avenir Next";
     font-size: 30px;
-    text-align: center;
   }
-
-
   .section-white4{
     height: 650px;
   }
 
   .planes-pago{
     margin-top: 70px;
-    text-align: center;
     font-family : "Avenir Next";
     font-size: 40px;
     font-weight: bold;
     color: rgb(12, 12, 187);
-    padding: 0px 0px 0px 0px;
   }
- 
-  .hline{
+
+  /* .hline{
     border-style: solid;
-    margin-left: 320px;
-    width: 700px;
-    height: 3px;
-    background-color: rgb(12, 12, 187);
-    color: rgb(12, 12, 187);
+    
+    color: rgb(12, 12, 187) !important;
+  }  */
+
+  .divider{
+    border-style: solid;
+    /* background-color: lawngreen !important; */
   }
 
   .titulo-plan{
     font-family : "Avenir Next";
     font-size: 30px;
     font-weight: bold;
-    text-align: center;
   }
-
+  
   .desc-plan{
     padding: 20px 20px 20px 20px;
     font-family : "Avenir Next";
     font-size: 25px;
-    text-align: center;
   }
 
   .container-gratis{
     width: 350px;
     height: 450px;
-    margin-left: 300px;
-    margin-top: 60px;
-    position: absolute;
+    margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);
     padding: 40px 20px 20px 20px;
     border-radius: 25px;
@@ -323,20 +292,17 @@ color: rgb(119, 118, 118);
   .container-mensual{
     width: 350px;
     height: 450px;
-    margin-left: -100px;
-    margin-top: 60px;
-    position: absolute;
+    margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);
     padding: 40px 20px 20px 20px;
     border-radius: 25px;
   }
 
+
   .container-anual{
     width: 350px;
     height: 450px;
-    margin-left: 700px;
-    margin-top: 60px;
-    position: absolute;
+    margin-top: 30px;
     background-color:rgba(244, 183, 196, 0.8);
     padding: 40px 20px 20px 20px;
     border-radius: 25px;
@@ -344,9 +310,7 @@ color: rgb(119, 118, 118);
 
   .boton-conviertete{
     text-decoration: none;
-    position: absolute;
-    margin-top: 35vh;
-    margin-left: 8vh;
+    margin-top: 20vh;
     display: inline-block;
     background: rgba(192, 108, 12, 0.877);
     line-height: 30px;
@@ -354,9 +318,8 @@ color: rgb(119, 118, 118);
     padding: 0.5em 0.5em;
     color: white;
     border-radius: 20px;
-    text-align: center;
-  
   }
+
   .boton-conviertete:hover{
     background-color: rgb(197, 120, 5);
   }
