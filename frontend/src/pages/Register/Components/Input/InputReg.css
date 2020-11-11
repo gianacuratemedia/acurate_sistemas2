@@ -1,0 +1,50 @@
+.input-container {
+    width: 100%;
+    height: 50px;
+    left: 100px;
+    position: relative;
+
+}
+
+.input-style {
+    width: 30%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    justify-content: left;
+    /*left: 100;*/
+    padding: 0 10px 0 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+
+.input-style::placeholder{
+    font-size: 14px;
+    color: gray;
+    opacity: 0.8;
+    width: 80%;
+    height: 35px;
+}
+
+.input-error{
+    left: 100px;
+    position: relative;
+    width: 100px;
+
+    border: 1.5px solid red;
+    color: red;
+    background: rosybrown;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    justify-content: left;
+    padding: 0 10px 0 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.input-error::placeholder{
+    color: red;
+
+}
