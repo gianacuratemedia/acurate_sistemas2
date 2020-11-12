@@ -4,30 +4,30 @@ export const MenuData = [
     {
         title: 'Explorar',
         path: '/explorar',
-        cName: 'explorar-text'
+        cName: 'nav-text' /*para el css*/
     },
 
     {
         title: 'Mi perfil',
         path: '/perfil',
-        cName: 'perfil-text'
+        cName: 'nav-text'
     },
 
     {
         title: 'Mis cursos',
         path: '/miscursos',
-        cName: 'cursos-text'
+        cName: 'nav-text'
     },
 
     {
         title: 'Ajustes',
         path: '/ajustes',
-        cName: 'ajustes-text'
+        cName: 'nav-text'
     },
 
     {
         title: 'Nivel de alcance',
-        cName: 'nivel-text'
+        cName: 'nav-text'
     },
 
     

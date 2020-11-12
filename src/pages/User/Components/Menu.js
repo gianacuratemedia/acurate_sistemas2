@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { MenuData } from './MenuData'
 import './Menu.css'
-
+import imagenes from '../../../assets/img/imagenes';
 
 function Menu() {
     const [sidebar, setSidebar] = useState (false); /*No mostrar barra*/
@@ -18,6 +18,9 @@ function Menu() {
             <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar}/> {/*Icono de barras de react*/}
             </Link>
+
+            <img className="logo" src= {imagenes.logoazul}/>
+
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}> {/*Si presiono icono de menu se ctiva */}
             <ul className='nav-menu-items' onClick={showSidebar}>
@@ -33,12 +36,12 @@ function Menu() {
                             <span>{item.title}</span> {/*Se mostrara el titulo indicado en archivo MenuData */}
                             </Link>
                         </li>
-                    )
+                    );
                 })}
             </ul>
         </nav>
-        </>
-    )
+    </>
+    );
 }
 
 export default Menu;
