@@ -6,6 +6,7 @@ import "./assets/css/App.css";
 import index from "./pages/IndexLayout/indexLayout";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import Categorias from "./pages/Categorias/Categorias";
 import PlanSelection from "./pages/Plan Selection/PlanSelection";
 import User from "./pages/User/User";
 import UserProfile from "./pages/User/UserProfile";
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" component={index} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/Categorias" component={Categorias}/>
         <Route exact path="/planselection" component={PlanSelection} />
         <Menu />
         <Route exact path="/User" component={User} />

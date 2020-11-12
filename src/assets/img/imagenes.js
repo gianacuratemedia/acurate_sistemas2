@@ -7,6 +7,8 @@ import registro from './registro.PNG';
 import estrellas from './Estrellas.png';
 import comparte from './comparte.png';
 import logoazul from './logoazul.png';
+import imgpersonal from './imgpersonal.png';
+import logoazul2 from './knowtured.png';
 
 
 export default {
@@ -18,5 +20,7 @@ export default {
     "registro": registro,
     "estrellas": estrellas,
     "comparte": comparte,
-    "logoazul": logoazul
+    "logoazul": logoazul,
+    "imgpersonal": imgpersonal,
+    "logoazul2": logoazul2,
 }
