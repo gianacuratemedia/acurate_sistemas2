@@ -1,0 +1,14 @@
+django
+whitenoise
+gunicorn
+supervisor
+djangorestframework
+django-cors-headers
+django-allauth==0.22
+django-rest-auth
+django_email_verification
+djangorestframework_simplejwt
+auditlog3
+six
+r-django-jet
+drf_yasg
