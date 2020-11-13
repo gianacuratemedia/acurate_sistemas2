@@ -10,10 +10,10 @@ align-items: center;
     margin-bottom: 2em;
 }
 
-.comunidad{
+.com{
     font-weight: bold;
     margin-top: 0.5em;
-    margin-left: 21em;
+    margin-left: 2em;
     color: gray;
     font-size: 18px;
 }
@@ -21,7 +21,7 @@ align-items: center;
 .categorias{
     font-weight: bold;
     margin-top: 0.5em;
-    margin-left: 11em;
+    margin-left: 5em;
     color: gray;
     font-size: 18px;
 }

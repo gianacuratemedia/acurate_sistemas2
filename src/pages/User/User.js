@@ -25,7 +25,7 @@ function User() {
 
             <img className="logo" src= {imagenes.logoazul}/>
 
-            <div className='comunidad'> Comunidad </div>
+            <div className='com'> Comunidad </div>
 
             <div className='categorias'> Categorias </div>
 
