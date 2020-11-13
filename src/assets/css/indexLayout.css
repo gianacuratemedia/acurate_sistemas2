@@ -148,11 +148,9 @@ color: rgb(119, 118, 118);
   }
 
   .barraBusqueda{
-    position: relative;
-    margin-top: 70vh;
-    margin-left: 70vh;
     width: 500px;
     height: 40px;
+    margin-top: 45rem;
     background-color:white;
     border-radius: 30px;
     display: flex;

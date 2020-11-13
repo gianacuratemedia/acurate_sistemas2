@@ -41,19 +41,25 @@ function App() {
           </div>
         </nav>
 
-        <form>
-          <div className="barraBusqueda">
-            <label class="label-icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <input
-              id="search"
-              type="search"
-              placeholder="Encuentra cursos, certificaciones y profesores.."
-              required
-            />
+        <div className="row">
+          <div className="col s4"></div>
+          <div className="col s4">
+            <form>
+              <div className="barraBusqueda">
+                <label class="label-icon" for="search">
+                  <i class="material-icons">search</i>
+                </label>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Encuentra cursos, certificaciones y profesores.."
+                  required
+                />
+              </div>
+            </form>
           </div>
-        </form>
+          <div className="col s4"></div>
+        </div>
       </div>
 
       <div class="section-white1">
