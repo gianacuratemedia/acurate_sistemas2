@@ -103,11 +103,9 @@ color: rgb(119, 118, 118);
 
 
 .header-center{
-  position: relative;
-  left: 250px;
+  margin-bottom: 7vh;
   font-size: 30px;
   width: 500px;
-  text-align: center;
 }
 .azul{
   position: relative;
@@ -118,14 +116,13 @@ color: rgb(119, 118, 118);
   }
 
   .texto{
-    margin-top: 1vh;
+    margin-top: 12vh;
     -webkit-text-stroke: 1px black;
     font-size: 6vh;
   }
 
   .parrafoPrincipal{
     font-size: 3vh;
-    margin-top: 5vh;
     -webkit-text-stroke: .6px black;    
   }
 
@@ -256,7 +253,7 @@ color: rgb(119, 118, 118);
   .container-instruccion{
     width: 350px;
     height: 350px;
-    margin-top: 250px;
+    margin-top: 20vh;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }

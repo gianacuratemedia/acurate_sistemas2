@@ -64,10 +64,10 @@ function App() {
               con los mejores profesores.
             </div>
             <p className="parrafoPrincipal">
-              Somos una plataforma de contenido en<br></br>
-              streaming. Nuestros programas permiten terminar<br></br>
-              cursos enteros en 15 minutos en el formato que<br></br>
-              prefieran con mas de 600 contenidos en áreas
+              Somos una plataforma de contenido en
+              streaming. Nuestros programas permiten<br></br> terminar
+              cursos enteros en 15 minutos en el formato que
+              prefieran con mas de 600<br></br> contenidos en áreas
             </p>
           </div>
           <div class="container-avanza center col s12 l4">
@@ -101,10 +101,12 @@ function App() {
 
       <div class="section white2">
         <div class="row container">
-          <div class="header-center">Conoce a tus profesores</div>
+          <div class="header-center col s12 center">
+            Conoce a tus profesores
+          </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>
@@ -118,7 +120,7 @@ function App() {
           </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>
@@ -132,7 +134,7 @@ function App() {
           </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>
@@ -144,6 +146,7 @@ function App() {
               </div>
             </div>
           </div>
+       
         </div>
       </div>
 
