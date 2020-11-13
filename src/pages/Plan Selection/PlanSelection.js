@@ -1,46 +1,13 @@
-import React, {useState, Component} from 'react';
-//import {Text} from 'react-naive';
+import React from 'react';
 import imagenes from '../../assets/img/imagenes';
-//import {link} from "react-router";
+
 
 import './PlanSelection.css';
-
-import Label from './Components/Label Plan/LabelPlan';
-import Input from './Components/Input Plan/InputPlan'; 
 
 
 const PlanSelection = () => {
 
-    //Estados
-    const [user, setUser] = useState(''); //Buscar
-    //const [nombreUsuario, setUser] = useState(''); //Buscar
-    const [password, setPassword] = useState(''); //Buscar
-    const [passwordError, setPasswordError]=useState(false);
-
-    function handleChange(name, value){ //Si es el ingreso (en text box) de usuario tomar info, si es el de contraseña no
-        if(name === 'usuario'){
-            setUser(value)
-        } 
-        else{ 
-            if(value.length < 6){ //Solo de tamaño seran mas de 6 caracteres
-                setPasswordError(true);
-            }
-            else{
-                setPasswordError(false);
-                setPassword(value)
-            }
-        } 
-    };
-
-    function handleSubmit(){ 
-        let account = {user, password} //Armar una variable llamada account que estara compuesto por user y password
-        if(account){
-            //Aqui en base de datos 
-            console.log('account:', account)
-
-        }
-    };
-
+    
     return (
     <div className= 'plancont'>
 

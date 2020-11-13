@@ -9,6 +9,7 @@ import comparte from './comparte.png';
 import logoazul from './logoazul.png';
 import imgpersonal from './imgpersonal.png';
 import logoazul2 from './knowtured.png';
+import video from './video.png';
 
 
 export default {
@@ -23,4 +24,5 @@ export default {
     "logoazul": logoazul,
     "imgpersonal": imgpersonal,
     "logoazul2": logoazul2,
+    "video": video,
 }

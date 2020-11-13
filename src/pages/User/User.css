@@ -1,0 +1,23 @@
+.usercont{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.bienvenido{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.nombre-usuario{
+    font-weight: bold;
+    color: blue;
+    font-size: 30px;
+
+}
+
+.cursos-populares{
+    font-weight: bold;
+    font-size: 20px;
+
+}

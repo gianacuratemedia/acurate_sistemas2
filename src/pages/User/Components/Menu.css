@@ -6,6 +6,227 @@ justify-content: start;
 align-items: center;
 }
 
+.logo{
+    margin-bottom: 2em;
+}
+
+.comunidad{
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-left: 21em;
+    color: gray;
+    font-size: 18px;
+}
+
+.categorias{
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-left: 11em;
+    color: gray;
+    font-size: 18px;
+}
+
+.barraBusqueda{
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 5em;
+    width: 500px;
+    height: 40px;
+    background-color:white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.campana{
+    width: 25px;
+    height: 25px;
+    margin-left: 3em;
+}
+
+.icono-usuario{
+    width: 30px;
+    height: 30px;
+    margin-left: 1em;
+}
+
+
+
+.bienvenido{
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
+.nombre-usuario{
+    font-weight: bold;
+    color: blue;
+    font-size: 35px;
+    margin-left: 8.5em;
+    margin-top: -1.5em;
+}
+
+.cursos-populares{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 3.5em;
+    margin-top: 1em;
+}
+
+.video{
+    height: 10em;
+    width: 18em;
+}
+.cont-curso1{
+    height: 17em;
+    width: 18em;
+    margin-left: 5em;
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.cont-curso2{
+    height: 17em;
+    width: 18em;
+    margin-left: 5em;
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.cont-curso3{
+    height: 17em;
+    width: 18em;
+    position: absolute;
+    margin-left: 25em;
+    margin-top: -36em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.cont-curso4{
+    height: 17em;
+    width: 18em;
+    position: absolute;
+    margin-left: 25em;
+    margin-top: -17em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.cont-curso5{
+    height: 17em;
+    width: 18em;
+    position: absolute;
+    margin-left: 45em;
+    margin-top: -36em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.cont-curso6{
+    height: 17em;
+    width: 18em;
+    position: absolute;
+    margin-left: 45em;
+    margin-top: -17em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+}
+
+.seccion-foro{
+    position: absolute;
+    margin-left: 65em;
+    margin-top: -36em;
+    height: 15em;
+    width: 24em;
+}
+
+.foro{
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 49em;
+    margin-top: -30em;
+}
+
+.icono-mensajes{
+    width: 50px;
+    height: 50px;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+.nombre-curso{
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8em;
+    margin-top: -3em;
+}
+
+.mensaje{
+    font-size: 15px;
+    color: #cecccc;
+    margin-left: 8em;
+}
+
+.icono-flecha{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: 20em;
+    margin-top: -2.3em;
+}
+
+
+
+.seccion-profesores{
+    background-color: white;
+    position: absolute;
+    margin-left: 65em;
+    margin-top: -19em;
+    height: 25em;
+    width: 24em;
+}
+
+.profesores{
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 49em;
+    margin-top: -16em;
+}
+
+.nombre-profesor{
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8em;
+    margin-top: -2.5em;
+}
+
+.experto{
+    font-size: 15px;
+    color: #cecccc;
+    margin-left: 8em;
+}
+
+.icono-profesor{
+    width: 30px;
+    height: 30px;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+
 .menu-bars {
 margin-left: 2rem;
 font-size: 2rem;
