@@ -32,6 +32,6 @@ export default class UserService{
 
 	updateUser(user){
 		const url = `${API_URL}/users/${user.pk}`;
-		return axios.put(url,user;
+		return axios.put(url,user);
 	}
 }
