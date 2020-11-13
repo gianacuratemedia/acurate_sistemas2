@@ -28,8 +28,8 @@ function App() {
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
-              <Link to="/login">
-                <a class="boton-iniciar">Iniciar Sesión</a>
+                <Link to="/login">
+                  <a class="boton-iniciar">Iniciar Sesión</a>
                 </Link>
               </li>
               <li>
@@ -41,35 +41,40 @@ function App() {
           </div>
         </nav>
 
-
-
-        <form>
-          <div className="barraBusqueda">
-            <label class="label-icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <input
-              id="search"
-              type="search"
-              placeholder="Encuentra cursos, certificaciones y profesores.."
-              required
-            />
+        <div className="row">
+          <div className="col s4"></div>
+          <div className="col s4">
+            <form>
+              <div className="barraBusqueda">
+                <label class="label-icon" for="search">
+                  <i class="material-icons">search</i>
+                </label>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Encuentra cursos, certificaciones y profesores.."
+                  required
+                />
+              </div>
+            </form>
           </div>
-        </form>
+          <div className="col s4"></div>
+        </div>
       </div>
 
       <div class="section-white1">
-        <div className="texto">
-            Aprende de manera eficiente,<br></br>
-            con los mejores profesores.
-        </div>
-        <p className="parrafoPrincipal">
-          Somos una plataforma de contenido en<br></br>
-          streaming. Nuestros programas permiten terminar<br></br>
-          cursos enteros en 15 minutos en el formato que<br></br>
-          prefieran con mas de 600 contenidos en áreas
-        </p>
         <div class="row container">
+          <div className="col s12 center">
+            <div className="texto">
+              Aprende de manera eficiente,<br></br>
+              con los mejores profesores.
+            </div>
+            <p className="parrafoPrincipal">
+              Somos una plataforma de contenido en streaming. Nuestros programas
+              permiten<br></br> terminar cursos enteros en 15 minutos en el
+              formato que prefieran con mas de 600<br></br> contenidos en áreas
+            </p>
+          </div>
           <div class="container-avanza center col s12 l4">
             <img className="estrella" src={imagenes.estrellas} />
             <div class="titulo-estrella">+600 cursos en linea</div>
@@ -101,10 +106,12 @@ function App() {
 
       <div class="section white2">
         <div class="row container">
-          <div class="header-center">Conoce a tus profesores</div>
+          <div class="header-center col s12 center">
+            Conoce a tus profesores
+          </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>
@@ -118,7 +125,7 @@ function App() {
           </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>
@@ -132,7 +139,7 @@ function App() {
           </div>
 
           <div className="col s4">
-            <div className="item center">
+            <div className=" center">
               <img className="profe1" src={imagenes.img5} />
               <div className="item-text">
                 <h3>

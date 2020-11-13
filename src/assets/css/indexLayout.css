@@ -103,11 +103,9 @@ color: rgb(119, 118, 118);
 
 
 .header-center{
-  position: relative;
-  left: 250px;
+  margin-bottom: 7vh;
   font-size: 30px;
   width: 500px;
-  text-align: center;
 }
 .azul{
   position: relative;
@@ -118,23 +116,14 @@ color: rgb(119, 118, 118);
   }
 
   .texto{
-    position: absolute;
-    margin-top: 1vh;
-    margin-left: 65vh;
+    margin-top: 12vh;
     -webkit-text-stroke: 1px black;
-    text-align: center;
     font-size: 6vh;
-
   }
 
   .parrafoPrincipal{
-    position: absolute;
     font-size: 3vh;
-    margin-top: 20vh;
-    margin-left: 70vh;
-    -webkit-text-stroke: .6px black;
-    text-align: center;
-    
+    -webkit-text-stroke: .6px black;    
   }
 
   .boton{
@@ -159,11 +148,9 @@ color: rgb(119, 118, 118);
   }
 
   .barraBusqueda{
-    position: relative;
-    margin-top: 70vh;
-    margin-left: 70vh;
     width: 500px;
     height: 40px;
+    margin-top: 45rem;
     background-color:white;
     border-radius: 30px;
     display: flex;
@@ -264,7 +251,7 @@ color: rgb(119, 118, 118);
   .container-instruccion{
     width: 350px;
     height: 350px;
-    margin-top: 250px;
+    margin-top: 20vh;
     background-color: white;
     padding: 20px 20px 20px 20px;
   }
