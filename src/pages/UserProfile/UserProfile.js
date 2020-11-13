@@ -45,6 +45,8 @@ function UserProfile() {
             <BiIcons.BiUserCircle onClick="#" className="icono-usuario"/>
         </div>
 
+    <div className= 'seccion-pagina'>
+
         <div className= 'seccion-perfil'>
             <BiIcons.BiUserCircle onClick="#" className="icon-usuario"/>
 
@@ -67,12 +69,12 @@ function UserProfile() {
                     
         </div> 
 
-{/*
-        <div class="seccion-cursos">   
+
+        <div class="seccion-insignias">   
 
           <div className='insignias'> 
             Insignias 
-          </div>         
+          </div> <br></br>      
 
             <div class="insignia1">
                 <BiIcons.BiBadge onClick="#" className="icono-insignia"/>
@@ -80,17 +82,17 @@ function UserProfile() {
             </div>
 
             <div class="insignia2">
-                <BiIcons.BiBadge onClick="#" className="icono-insignia"/>
+                <BiIcons.BiBadge onClick="#" className="icono-insignia2"/>
                 <div class="logro">Nombre del logro</div>
             </div>
 
             <div class="insignia3">
-                <BiIcons.BiBadge onClick="#" className="icono-insignia"/>
+                <BiIcons.BiBadge onClick="#" className="icono-insignia2"/>
                 <div class="logro">Nombre del logro</div>
             </div>
 
             <div class="insignia4">
-                <BiIcons.BiBadge onClick="#" className="icono-insignia"/>
+                <BiIcons.BiBadge onClick="#" className="icono-insignia2"/>
                 <div class="logro">Nombre del logro</div>
             </div>
 
@@ -100,11 +102,11 @@ function UserProfile() {
             </div>
 
             <div class="insignia6">
-                <BiIcons.BiBadge onClick="#" className="icono-insignia"/>
+                <BiIcons.BiBadge onClick="#" className="icono-insignia3"/>
                 <div class="logro">Nombre del logro</div>
             </div>
 
-        
+          
         </div>
 
         <div className= 'seccion-misprofesores'>
@@ -166,22 +168,22 @@ function UserProfile() {
             </div>
                     
         </div> 
-*/}
+
         <div className= 'seccion-detalles'>
 
             <div className='detalles-cuenta'> 
                 Detalles de la cuenta   
-            </div>
+            </div><br></br>
 
             <div className='nombre'><strong>Nombre:</strong> Usuario</div>
             <div className='fecha'><strong>Fecha de Nacimiento:</strong> 01/enero/2000</div>
             <div className='correo-elec'><strong>Correo Electrónico:</strong> usuario@gmail.com</div>
             <div className='tel'><strong>Teléfono:</strong> 222 222 222 </div>
 
-            <div className='editar'> 
+            <div className='editar2'> 
                 Editar 
             </div>
-            <BsIcons.BsFillGearFill onClick="#" className="icono-engrane"/>
+            <BsIcons.BsFillGearFill onClick="#" className="icono-engrane2"/>
                     
         </div>  
 
@@ -189,69 +191,70 @@ function UserProfile() {
 
             <div className='info-pago'> 
                 Información de Pago   
-            </div>
+            </div><br></br>
 
             <div className='membresia'><strong>Membresia:</strong> Activa</div>
             <div className='suscripcion'><strong>Suscripción:</strong> Anual</div>
             <div className='metodo'><strong>Método:</strong> PayPal </div>
 
-            <div className='editar'> 
+            <div className='editar2'> 
                 Editar 
             </div>
-            <BsIcons.BsFillGearFill onClick="#" className="icono-engrane"/>
+            <BsIcons.BsFillGearFill onClick="#" className="icono-engrane2"/>
                     
         </div>
 
-{/*
+
         <div className= 'seccion-actividad'>
 
             <div className='actividad'> 
                 Actividad   
-            </div>
+            </div><br></br>
 
             <div className= 'cont-act1'>
-              <BiIcons.BiCircle onClick="#" className="icono-circulo"/>
+              <BiIcons.BiCircle onClick="#" className="icono-circulo1"/>
 
                 <div className='nombre-act'> Curso Marketing Digital </div>
 
-                <div className='status'> Tarea Entregada </div>
-            </div>
+                <div className='status1'> Tarea Entregada </div>
+            </div><br></br>
 
             <div className= 'cont-act2'>
-              <BiIcons.BiCircle onClick="#" className="icono-circulo"/>
+              <BiIcons.BiCircle onClick="#" className="icono-circulo2"/>
 
                 <div className='nombre-act'> Lección 01: Cocina 101 </div>
 
-                <div className='status'> Continuar viendo </div>
-            </div>
+                <div className='status2'> Continuar viendo </div>
+            </div><br></br>
 
             <div className= 'cont-act3'>
-              <BiIcons.BiCircle onClick="#" className="icono-circulo"/>
+              <BiIcons.BiCircle onClick="#" className="icono-circulo3"/>
 
                 <div className='nombre-act'> ¡Logro Desbloqueado! </div>
 
-                <div className='status'> Ver insignia </div>
-            </div>
+                <div className='status3'> Ver insignia </div>
+            </div><br></br>
 
             <div className= 'cont-act4'>
-              <BiIcons.BiCircle onClick="#" className="icono-circulo"/>
+              <BiIcons.BiCircle onClick="#" className="icono-circulo1"/>
 
                 <div className='nombre-act'> Curso Marketing Digital </div>
 
-                <div className='status'> Tarea Entregada </div>
-            </div>
+                <div className='status1'> Tarea Entregada </div>
+            </div><br></br>
 
             <div className= 'cont-act5'>
-              <BiIcons.BiCircle onClick="#" className="icono-circulo"/>
+              <BiIcons.BiCircle onClick="#" className="icono-circulo1"/>
 
                 <div className='nombre-act'> Curso Cocina </div>
 
-                <div className='status'> Tarea Entregada </div>
+                <div className='status1'> Tarea Entregada </div>
             </div>
       
         </div> 
+    </div> 
 
-*/}
+
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}> {/*Si presiono icono de menu se ctiva */}
             <ul className='nav-menu-items' onClick={showSidebar}>
                 <li className='navbar-toggle'>
