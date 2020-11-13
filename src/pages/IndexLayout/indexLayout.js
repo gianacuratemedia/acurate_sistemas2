@@ -64,10 +64,9 @@ function App() {
               con los mejores profesores.
             </div>
             <p className="parrafoPrincipal">
-              Somos una plataforma de contenido en
-              streaming. Nuestros programas permiten<br></br> terminar
-              cursos enteros en 15 minutos en el formato que
-              prefieran con mas de 600<br></br> contenidos en áreas
+              Somos una plataforma de contenido en streaming. Nuestros programas
+              permiten<br></br> terminar cursos enteros en 15 minutos en el
+              formato que prefieran con mas de 600<br></br> contenidos en áreas
             </p>
           </div>
           <div class="container-avanza center col s12 l4">
@@ -146,7 +145,6 @@ function App() {
               </div>
             </div>
           </div>
-       
         </div>
       </div>
 
