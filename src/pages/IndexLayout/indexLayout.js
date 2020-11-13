@@ -28,8 +28,8 @@ function App() {
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
-              <Link to="/login">
-                <a class="boton-iniciar">Iniciar Sesión</a>
+                <Link to="/login">
+                  <a class="boton-iniciar">Iniciar Sesión</a>
                 </Link>
               </li>
               <li>
@@ -40,8 +40,6 @@ function App() {
             </ul>
           </div>
         </nav>
-
-
 
         <form>
           <div className="barraBusqueda">
@@ -59,17 +57,19 @@ function App() {
       </div>
 
       <div class="section-white1">
-        <div className="texto">
-            Aprende de manera eficiente,<br></br>
-            con los mejores profesores.
-        </div>
-        <p className="parrafoPrincipal">
-          Somos una plataforma de contenido en<br></br>
-          streaming. Nuestros programas permiten terminar<br></br>
-          cursos enteros en 15 minutos en el formato que<br></br>
-          prefieran con mas de 600 contenidos en áreas
-        </p>
         <div class="row container">
+          <div className="col s12 center">
+            <div className="texto">
+              Aprende de manera eficiente,<br></br>
+              con los mejores profesores.
+            </div>
+            <p className="parrafoPrincipal">
+              Somos una plataforma de contenido en<br></br>
+              streaming. Nuestros programas permiten terminar<br></br>
+              cursos enteros en 15 minutos en el formato que<br></br>
+              prefieran con mas de 600 contenidos en áreas
+            </p>
+          </div>
           <div class="container-avanza center col s12 l4">
             <img className="estrella" src={imagenes.estrellas} />
             <div class="titulo-estrella">+600 cursos en linea</div>
