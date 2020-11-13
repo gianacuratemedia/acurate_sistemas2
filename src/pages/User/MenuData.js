@@ -1,4 +1,3 @@
-import React from 'react';
 
 export const MenuData = [
     {
@@ -9,13 +8,13 @@ export const MenuData = [
 
     {
         title: 'Mi perfil',
-        path: '/perfil',
+        path: '/UserProfile',
         cName: 'nav-text'
     },
 
     {
         title: 'Mis cursos',
-        path: '/miscursos',
+        path: '/UserCourses',
         cName: 'nav-text'
     },
 

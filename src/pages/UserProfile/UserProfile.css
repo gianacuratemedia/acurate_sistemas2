@@ -1,0 +1,203 @@
+.navbar {
+background-color: whitesmoke;
+height: 90px;
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+.logo{
+    margin-bottom: 2em;
+}
+
+.comunidad{
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-left: 21em;
+    color: gray;
+    font-size: 18px;
+}
+
+.categorias{
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-left: 11em;
+    color: gray;
+    font-size: 18px;
+}
+
+.barrabusqueda{
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 5em;
+    width: 500px;
+    height: 40px;
+    background-color:white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.campana{
+    width: 25px;
+    height: 25px;
+    margin-left: 3em;
+}
+
+.icono-usuario{
+    width: 30px;
+    height: 30px;
+    margin-left: 1em;
+}
+
+.menu-bars {
+margin-left: 2rem;
+font-size: 2rem;
+background: none;
+}
+
+.nav-menu { /*rectangulo que es el menu*/
+background-color: whitesmoke;
+width: 250px;
+height: 100vh;
+display: flex;
+justify-content: center;
+position: fixed;
+top: 0;
+left: -100%;
+transition: 850ms;
+}
+
+.nav-menu.active {
+left: 0;
+transition: 350ms;
+}
+
+.nav-text {
+display: flex;
+justify-content: start;
+align-items: center;
+padding: 8px 8px 8px 8px;
+list-style: none;
+height: 80px;
+width: 250px;
+}
+
+.nav-text a {
+text-decoration: none;
+color:black;
+font-weight: bold;
+font-size: 18px;
+width: 95%;
+height: 100%;
+display: flex;
+align-items: center;
+padding: 0 16px;
+border-radius: 4px;
+}
+
+.nav-text a:hover {
+background-color: rgba(93, 93, 255, 0.856);
+color: blue;
+}
+
+.nav-menu-items {
+width: 100%;
+}
+
+.navbar-toggle {
+background-color: whitesmoke;
+width: 100%;
+height: 80px;
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+span {
+margin-left: 16px;
+}
+
+.icon-usuario{
+    height: 8em;
+    width: 8em;
+}
+
+.seccion-perfil{
+    text-align: center;
+    height: 22em;
+    width: 18em;
+    margin-left: 5em;
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+    padding: 20px 20px 20px 20px;
+}
+
+.nombre-us{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nivel-us{
+    font-weight: bold;
+    color: #cecccc;
+}
+
+.desc-us{
+    font-size: 10px;
+    color: #cecccc;
+}
+
+.editar{
+    margin-left: 8em;
+    margin-top: 1em;
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}
+
+.icono-engrane{
+    position: absolute;
+    margin-left: 7em;
+    margin-top: -1.1em;
+    color: blue;
+}
+
+.seccion-detalles{
+    text-align: left;
+    height: 16em;
+    width: 20em;
+    margin-left: 5em;
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+    padding: 20px 20px 20px 20px;
+}
+
+.detalles-cuenta{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+.seccion-informacion{
+    text-align: left;
+    height: 16em;
+    width: 20em;
+    margin-left: 5em;
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #cecccc;
+    padding: 20px 20px 20px 20px;
+}
+
+.info-pago{
+    font-weight: bold;
+    font-size: 20px;
+}

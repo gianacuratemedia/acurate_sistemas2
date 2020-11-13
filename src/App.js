@@ -9,13 +9,13 @@ import Register from "./pages/Register/Register";
 import Categorias from "./pages/Categorias/Categorias";
 import PlanSelection from "./pages/Plan Selection/PlanSelection";
 import User from "./pages/User/User";
-import UserProfile from "./pages/User/UserProfile";
-import UserCourses from "./pages/User/UserCourses";
-import Menu from "./pages/User/Components/Menu";
+import UserProfile from "./pages/UserProfile/UserProfile";
+import UserCourses from "./pages/UserProfile/UserCourses";
 
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={index} />
@@ -23,12 +23,12 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/Categorias" component={Categorias}/>
         <Route exact path="/planselection" component={PlanSelection} />
-        <Menu />
         <Route exact path="/User" component={User} />
-        <Route exact path="/User/UserProfile" component={UserProfile} />
-        <Route exact path="/User/UserCourses" component={UserCourses} />
+        <Route exact path="/UserProfile" component={UserProfile} />
+        <Route exact path="/UserCourses" component={UserCourses} />
       </Switch>
     </BrowserRouter>
+    </>
   );
 }
 
