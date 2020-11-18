@@ -11,6 +11,7 @@ import PlanSelection from "./pages/Plan Selection/PlanSelection";
 import User from "./pages/User/User";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import UserCourses from "./pages/UserProfile/UserCourses";
+import UserTeacher from "./pages/UserTeacher/UserTeacher";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/Categorias" component={Categorias}/>
         <Route exact path="/planselection" component={PlanSelection} />
+        <Route exact path="/UserTeacher" component={UserTeacher} />
         <Route exact path="/User" component={User} />
         <Route exact path="/UserProfile" component={UserProfile} />
         <Route exact path="/UserCourses" component={UserCourses} />
