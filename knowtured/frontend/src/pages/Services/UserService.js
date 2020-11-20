@@ -34,4 +34,9 @@ export default class UserService{
 		const url = `${API_URL}/users/${user.pk}`;
 		return axios.put(url,user);
 	}
+	
+	    loginUser(user){
+		const url = `${API_URL}/users/`;
+		return axios.post(url,user);
+	}
 }
