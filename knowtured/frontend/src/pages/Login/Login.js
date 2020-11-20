@@ -7,7 +7,8 @@ import Title from './Components/Title/TitleLog';
 import Label from './Components/Label/LabelLog';
 import Input from './Components/Input/InputLog'; 
 
-
+import UserService from '../Services/UserService';
+const userService = new UserService();
 const Login = () => {
 
     //Estados
@@ -30,14 +31,30 @@ const Login = () => {
         } 
     };
 
-    function handleSubmit(){ 
+      function handleSubmit(){ 
         let account = {user, password} //Armar una variable llamada account que estara compuesto por user y password
         if(account){
-            //Aqui en base de datos 
+            handleLogin(account);
             console.log('account:', account)
 
         }
     };
+
+    function handleLogin(){
+        userService.loginUser(
+          {
+          
+            "email": this.refs.email.value,
+            "password": this.refs.password.value,
+      
+         
+        }          
+        ).then((result)=>{
+          alert("Bienvenido");
+        }).catch(()=>{
+          alert('Email y/o contraseña incorrectos.');
+        });
+      };
 
     return (
         <div className= 'logincont'>
