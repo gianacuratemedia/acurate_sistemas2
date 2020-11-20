@@ -8,13 +8,14 @@ import './Register.css';
 import Title from './Components/Title/TitleReg';
 import Label from './Components/Label/LabelReg';
 import Input from './Components/Input/InputReg'; 
-
+import UserService from '../Services/UserService';
+const userService = new UserService();
 
 const Register = () => {
 
     //Estados
     const [user, setUser] = useState(''); //Buscar
-    //const [nombreUsuario, setUser] = useState(''); //Buscar
+    const [nombreUsuario, setUser] = useState(''); //Buscar
     const [password, setPassword] = useState(''); //Buscar
     const [passwordError, setPasswordError]=useState(false);
 
@@ -33,14 +34,31 @@ const Register = () => {
         } 
     };
 
-    function handleSubmit(){ 
-        let account = {user, password} //Armar una variable llamada account que estara compuesto por user y password
+  
+   function handleSubmit(event){ 
+         
+       let account = {nombreUsuario,user, password} //Armar una variable llamada account que estara compuesto por user y password
         if(account){
-            //Aqui en base de datos 
+            handleCreate();  
             console.log('account:', account)
 
         }
     };
+    function handleCreate(){
+        userService.createUser(
+          {
+            "nombre_usuario": this.refs.nombre_usuario.value,
+            "email": this.refs.email.value,
+            "password": this.refs.password.value,
+      
+         
+        }          
+        ).then((result)=>{
+          alert("Registro de usuario");
+        }).catch(()=>{
+          alert('Error de registro.');
+        });
+      };
 
     return (
         <div className= 'regcont'>
