@@ -7,6 +7,7 @@ from .models import CustomUser
 from .utils import Util
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
+from django.http.response import JsonResponse
 import jwt
 from django.conf import settings
 from drf_yasg.utils import swagger_auto_schema
@@ -45,7 +46,7 @@ class RegisterView(generics.GenericAPIView):
                 'email_subject': 'Verifica tu email'}
 
         Util.send_email(data)
-        return Response(user_data, status=status.HTTP_201_CREATED)
+        return JsonResponse(user_data, status=status.HTTP_201_CREATED)
 
 
 class VerifyEmail(views.APIView):
@@ -63,11 +64,11 @@ class VerifyEmail(views.APIView):
             if not user.is_verified:
                 user.is_verified = True
                 user.save()
-            return Response({'email': 'Cuenta activada'}, status=status.HTTP_200_OK)
+            return JsonResponse({'email': 'Cuenta activada'}, status=status.HTTP_200_OK)
         except jwt.ExpiredSignatureError as identifier:
-            return Response({'error': 'La activación de cuenta ha expirado'}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({'error': 'La activación de cuenta ha expirado'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError as identifier:
-            return Response({'error': 'Token inválido'}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({'error': 'Token inválido'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LoginAPIView(generics.GenericAPIView):
@@ -76,7 +77,7 @@ class LoginAPIView(generics.GenericAPIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.data, status=status.HTTP_200_OK)
 
 class LogoutAPIView(generics.GenericAPIView):
      serializer_class = LogoutSerializer
@@ -116,41 +117,7 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
             data = {'email_body': email_body, 'to_email': user.email,
                     'email_subject': 'Reestablece tu contraseña'}
             Util.send_email(data)
-        return Response({'success': 'Te hemos enviado un link para restablecerla'}, status=status.HTTP_200_OK)
-
-class PasswordTokenCheckAPI(generics.GenericAPIView):
-    serializer_class = SetNewPasswordSerializer
-
-    def get(self, request, uidb64, token):
-
-     redirect_url = request.GET.get('redirect_url')
-     
-        try:
-            id = smart_str(urlsafe_base64_decode(uidb64))
-            user = CustomUser.objects.get(id=id)
-
-            if not PasswordResetTokenGenerator().check_token(user, token):
-                if len(redirect_url) > 3:
-                    return CustomRedirect(redirect_url+'?token_valid=False')
-                else:
-                    return CustomRedirect(os.environ.get('FRONTEND_URL', '')+'?token_valid=False')
-
-            if redirect_url and len(redirect_url) > 3:
-                return CustomRedirect(redirect_url+'?token_valid=True&message=Credentials Valid&uidb64='+uidb64+'&token='+token)
-            else:
-                return CustomRedirect(os.environ.get('FRONTEND_URL', '')+'?token_valid=False')
-
-         
-           except DjangoUnicodeDecodeError as identifier:
- 
-              try:
-
-              if not PasswordResetTokenGenerator().check_token(user):
-              return CustomRedirect(redirect_url+'?token_valid=False')
-            
-         except UnboundLocalError as e:  
-         return Response({'error': 'El token no es válido, por favor, ingrese otro'}, status=status.HTTP_400_BAD_REQUEST)
-
+        return JsonResponse({'success': 'Te hemos enviado un link para restablecerla'}, status=status.HTTP_200_OK)
 
 
 class SetNewPasswordAPIView(generics.GenericAPIView):
@@ -159,5 +126,5 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
     def patch(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response({'success': True, 'message': 'Se ha reestablecido su contraseña'}, status=status.HTTP_200_OK)
+        return JsonResponse({'success': True, 'message': 'Se ha reestablecido su contraseña'}, status=status.HTTP_200_OK)
 
