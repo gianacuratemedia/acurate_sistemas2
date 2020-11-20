@@ -43,7 +43,7 @@ class CustomUser(AbstractUser):
     nombre_usuario= models.CharField(null=False, max_length=50, unique=True)
     biografia=models.TextField(blank=True)
     email = models.EmailField(_('direccion de email'), unique=True)
-    telefono=models.CharField(null=False, max_length=12)
+    telefono=models.CharField(null=True, max_length=12)
     authkey=models.CharField(null= True, max_length=150)
     token=models.CharField(null= True, max_length=555)
     is_verified = models.BooleanField(default=False)
@@ -57,7 +57,7 @@ class CustomUser(AbstractUser):
     aceptacion_terminos=models.BooleanField(null= False, default=0)
     codigo_verificacion=models.CharField(null= True, max_length=150)
     registro_id=models.IntegerField(null=True)
-    nivel=models.IntegerField(null=False, default=0)
+    nivel=models.IntegerField(null=True, default=0)
     fecha_registro=models.DateTimeField(auto_now_add=True)
     ultima_visita=models.DateTimeField(auto_now=True)
     dias_premium=models.IntegerField(null=True)
@@ -90,5 +90,3 @@ def tokens(self):
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
-
-        
