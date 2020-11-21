@@ -12,6 +12,7 @@ import User from "./pages/User/User";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import UserCourses from "./pages/UserProfile/UserCourses";
 import UserTeacher from "./pages/UserTeacher/UserTeacher";
+import UserTeacherProfile from "./pages/UserTeacherProfile/UserTeacherProfile";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/User" component={User} />
         <Route exact path="/UserProfile" component={UserProfile} />
         <Route exact path="/UserCourses" component={UserCourses} />
+        <Route exact path="/UserTeacherProfile" component={UserTeacherProfile} />
       </Switch>
     </BrowserRouter>
     </>
