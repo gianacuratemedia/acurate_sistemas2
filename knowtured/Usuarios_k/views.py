@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, status, views, permissions
 from rest_framework.response import Response
-from .serializers import CustomUserSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer, ResetPasswordEmailRequestSerializer, SetNewPasswordSerializer
+from .serializers import RegisterSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer, ResetPasswordEmailRequestSerializer
+
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import CustomUser
 from .utils import Util
@@ -9,6 +10,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 from django.http.response import JsonResponse
 import jwt
+from rest_framework.authentication import TokenAuthentication
 from django.conf import settings
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
@@ -20,13 +22,19 @@ from django.shortcuts import redirect
 from django.http import HttpResponsePermanentRedirect
 import os
 
+
+#OTras importaciones de prueba
+
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 class CustomRedirect(HttpResponsePermanentRedirect):
 
     allowed_schemes = [os.environ.get('APP_SCHEME'), 'http', 'https']
 
 class RegisterView(generics.GenericAPIView):
 
-    serializer_class = CustomUserSerializer
+    serializer_class = RegisterSerializer
     renderer_classes = (CustomUserRenderer,)
 
     def post(self, request):
@@ -40,7 +48,7 @@ class RegisterView(generics.GenericAPIView):
         current_site = get_current_site(request).domain
         relativeLink = reverse('email-verify')
         absurl = 'http://'+current_site+relativeLink+"?token="+str(token)
-        email_body = 'Hola '+user.nombre_usuario + \
+        email_body = 'Hola '+user.username + \
             ' Verica tu cuenta con el siguiente link \n' + absurl
         data = {'email_body': email_body, 'to_email': user.email,
                 'email_subject': 'Verifica tu email'}
@@ -120,11 +128,10 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         return JsonResponse({'success': 'Te hemos enviado un link para restablecerla'}, status=status.HTTP_200_OK)
 
 
-class SetNewPasswordAPIView(generics.GenericAPIView):
-    serializer_class = SetNewPasswordSerializer
+#class SetNewPasswordAPIView(generics.GenericAPIView):
+ #   serializer_class = SetNewPasswordSerializer
 
-    def patch(self, request):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        return JsonResponse({'success': True, 'message': 'Se ha reestablecido su contraseña'}, status=status.HTTP_200_OK)
-
+  #  def patch(self, request):
+   #     serializer = self.serializer_class(data=request.data)
+   #     serializer.is_valid(raise_exception=True)
+   #     return JsonResponse({'success': True, 'message': 'Se ha reestablecido su contraseña'}, status=status.HTTP_200_OK)
