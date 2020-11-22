@@ -1,13 +1,13 @@
-from django.contrib.auth.models import AbstractUser, PermissionsMixin, AbstractBaseUser, BaseUserManager
+rom django.db import models
+
+# Create your models here.
+from django.contrib.auth.models import (
+    AbstractBaseUser, BaseUserManager, PermissionsMixin)
 
 from django.db import models
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.utils.translation import gettext_lazy as _
 
 
-
-
-#MODELO SUPERUSUARIO
 class UserManager(BaseUserManager):
 
     def create_user(self, username, email, password=None):
@@ -23,7 +23,7 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, username, email, password=None):
         if password is None:
-            raise TypeError('Debes ingresar una contraseña')
+            raise TypeError('Debe ingresar una contraseña')
 
         user = self.create_user(username, email, password)
         user.is_superuser = True
@@ -31,51 +31,48 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-AUTH_PROVIDERS = {'email': 'email'}
-#MODELO CUSTOMUSER
+
+AUTH_PROVIDERS = {'facebook': 'facebook', 'google': 'google',
+                  'twitter': 'twitter', 'email': 'email'}
 
 
-class CustomUser(AbstractUser):
-    
-    fecha_nacimiento=models.DateField(blank=True, null=True)
-    username= models.CharField(null=False, max_length=50, unique=True)
-    biografia=models.TextField(blank=True)
-    email = models.EmailField(_('direccion de email'), unique=True)
-    telefono=models.CharField(null=True, max_length=12)
+class User(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=255, unique=True, db_index=True)
+    email = models.EmailField(max_length=255, unique=True, db_index=True)
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    password=models.CharField(null=False, max_length=40)
+    is_staff = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    auth_provider = models.CharField(
+        max_length=255, blank=False,
+        null=False, default=AUTH_PROVIDERS.get('email'))
+    biografia=models.TextField(blank=True)
+    dias_premium=models.IntegerField(default=0)
     direccion=models.CharField(null=True, max_length=100)
     ciudad= models.CharField(null=True, max_length=50)
     estado= models.CharField(null=True, max_length=80)
     pais=models.CharField(null=True, max_length=80)
     codigo_postal=models.CharField(null=True, max_length=80)
     aceptacion_terminos=models.BooleanField(null= False, default=0)
-    codigo_verificacion=models.CharField(null= True, max_length=150)
-    registro_id=models.IntegerField(null=True)
     nivel=models.IntegerField(null=False, default=0)
-    fecha_registro=models.DateTimeField(auto_now_add=True)
-    ultima_visita=models.DateTimeField(auto_now=True)
-    dias_premium=models.IntegerField(null=True)
-    auth_provider = models.CharField(
-        max_length=255, blank=False,
-        null=False, default=AUTH_PROVIDERS.get('email'))
-    def register(self):
-        self.save()
+    photo=models.ImageField(null=True, upload_to ='users/profile/')
 
-@staticmethod
-def get_customer_by_email(email):
-        try:
-            return CustomUser.objects.get(email=email)
-        except:
-            return False
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 
+    objects = UserManager()
 
-def isExists(self):
-        if CustomUser.objects.filter(email = self.email):
-            return True
+    def __str__(self):
+        return self.email
 
-        return  False
+    def tokens(self):
+        refresh = RefreshToken.for_user(self)
+        return {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }
+
 
 
 def __str__(self):
