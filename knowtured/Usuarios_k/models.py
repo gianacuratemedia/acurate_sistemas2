@@ -31,21 +31,17 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-
+AUTH_PROVIDERS = {'email': 'email'}
 #MODELO CUSTOMUSER
 
 
 class CustomUser(AbstractUser):
-    nombre=models.CharField(null= True, max_length=150)
-    apellido_paterno=models.CharField(null= True, max_length=150)
-    apellido_materno=models.CharField(null= True, max_length=150)
+    
     fecha_nacimiento=models.DateField(blank=True, null=True)
-    nombre_usuario= models.CharField(null=False, max_length=50, unique=True)
+    username= models.CharField(null=False, max_length=50, unique=True)
     biografia=models.TextField(blank=True)
     email = models.EmailField(_('direccion de email'), unique=True)
     telefono=models.CharField(null=True, max_length=12)
-    authkey=models.CharField(null= True, max_length=150)
-    token=models.CharField(null= True, max_length=555)
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     password=models.CharField(null=False, max_length=40)
@@ -57,12 +53,13 @@ class CustomUser(AbstractUser):
     aceptacion_terminos=models.BooleanField(null= False, default=0)
     codigo_verificacion=models.CharField(null= True, max_length=150)
     registro_id=models.IntegerField(null=True)
-    nivel=models.IntegerField(null=True, default=0)
+    nivel=models.IntegerField(null=False, default=0)
     fecha_registro=models.DateTimeField(auto_now_add=True)
     ultima_visita=models.DateTimeField(auto_now=True)
     dias_premium=models.IntegerField(null=True)
-   
-   
+    auth_provider = models.CharField(
+        max_length=255, blank=False,
+        null=False, default=AUTH_PROVIDERS.get('email'))
     def register(self):
         self.save()
 
@@ -90,3 +87,5 @@ def tokens(self):
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
+
+        
