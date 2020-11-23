@@ -94,7 +94,7 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = 'Usuarios_k.CustomUser'
+AUTH_USER_MODEL = 'Usuarios_k.User'
 
 WSGI_APPLICATION = 'knowtured.wsgi.application'
 
@@ -111,7 +111,7 @@ DATABASES = {
 } 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
 
@@ -139,16 +139,16 @@ AUTH_PASSWORD_VALIDATORS = [
 #        'allauth.account.auth_backends.AuthenticationBackend',
 #       'accounts.auth_backends.EmailBackend'
 #    )
-#SITE_ID=1
+SITE_ID=1
 
 STATICFILES_DIRS=[
 os.path.join(BASE_DIR,'static')
 ]
-EMAIL_HOST=os.environ.get('EMAIL_HOST')
-EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS')
-EMAIL_PORT=os.environ.get('EMAIL_PORT')
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='knowturedinfo@gmail.com'
+EMAIL_HOST_PASSWORD='kn0wtured@'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
     
 
 # Internationalization
