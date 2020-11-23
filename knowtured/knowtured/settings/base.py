@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'Usuarios_k',
+    'Categorias_k',
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
     'allauth',
