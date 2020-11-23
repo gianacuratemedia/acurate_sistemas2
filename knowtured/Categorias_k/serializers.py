@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import Categoria
 
 
-class CategoriaSerializer(serializers.ModelSerializer):
+class CategoriasSerializer(serializers.ModelSerializer):
 
-   class Meta:
-       model = Categoria
-       fields = ('pk','usuario', 'nombre','descripcion','img_categorias')
+    class Meta:
+        model = Categoria
+        fields = ['id', 'nombre', 'descripcion', 'img_categoria']
