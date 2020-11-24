@@ -7,13 +7,33 @@ import Title from './Components/Title/TitleLog';
 import Label from './Components/Label/LabelLog';
 import Input from './Components/Input/InputLog'; 
 
+import axios from 'axios';
+import API from '../../services/api';
 
 const Login = () => {
-
     //Estados
     const [user, setUser] = useState('');
     const [password, setPassword] = useState(''); 
     const [passwordError, setPasswordError]=useState(false);
+
+    handleSubmit = async event => {
+        event.preventDefault();
+        
+        const response = await API.post(`graphql/`,{
+            query: `{
+                censos {
+                  idestado
+                  idmunicipio
+                  municipio
+                  UE
+                  A111A
+                }
+              }`,
+          });
+      
+        console.log(response.data);
+    };
+      
 
     function handleChange(name, value){ //Si es el ingreso (en text box) de usuario tomar info, si es el de contraseña no
         if(name === 'usuario'){ 
