@@ -34,7 +34,7 @@ class CategoriaDetail(RetrieveUpdateDestroyAPIView):
         
         categoria = self.get_queryset(id)
 
-        if(request.user == categoria.owner): # If creator is who makes request
+        if(request.user == categoria.owner): # Si el creador es quien hace el request
             serializer = CategoriasSerializer(categoria, data=request.data)
             if serializer.is_valid():
                 serializer.save()
@@ -63,7 +63,7 @@ class CategoriaDetail(RetrieveUpdateDestroyAPIView):
             }
             return Response(content, status=status.HTTP_401_UNAUTHORIZED)
    
-
+#Lista de categorias
 class CategoriaList(ListCreateAPIView):
     serializer_class = CategoriasSerializer
     queryset = Categoria.objects.all()
