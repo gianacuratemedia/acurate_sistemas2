@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'Usuarios_k',
     'Categorias_k',
+    'Curso_k',
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
     'allauth',
