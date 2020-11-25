@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import CategoriaListAPIView, CategoriaDetailAPIView
+from .views import CategoriaDetail
+from .views import CategoriaList, CategoriaListP
 
 
 urlpatterns = [
-    path('', CategoriaListAPIView.as_view(), name="categorias"),
-    path('<int:id>', CategoriaDetailAPIView.as_view(), name="categoria")
+    path('all-categorias/', CategoriaList.as_view(), name="categorias"),
+    path('all-categorias/<int:id>', CategoriaDetail.as_view(), name="categoria"),
+    path('', CategoriaListP.as_view(), name="all_categorias")
 ]
