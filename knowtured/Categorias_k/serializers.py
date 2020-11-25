@@ -1,8 +1,16 @@
-from django.urls import path
-from .views import CategoriaListAPIView, CategoriaDetailAPIView
+from rest_framework import serializers
+from .models import Categoria
 
 
-urlpatterns = [
-    path('', CategoriaListAPIView.as_view(), name="categorias"),
-    path('<int:id>', CategoriaDetailAPIView.as_view(), name="categoria")
-]
+class CategoriasSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Categoria
+        fields = ['id', 'nombre', 'descripcion', 'img_categoria']
+
+
+class PublicCategoriasSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Categoria
+        fields = ['nombre', 'descripcion', 'img_categoria']
