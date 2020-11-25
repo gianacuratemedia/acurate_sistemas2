@@ -16,3 +16,6 @@ class Categoria(models.Model):
 
     class Meta:
         ordering: ['-updated_at']
+
+    def __str__(self):
+        return str(self.owner)+'s category'
