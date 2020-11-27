@@ -6,8 +6,8 @@ import "./Login.css";
 import Title from "./Components/Title/TitleLog";
 import Label from "./Components/Label/LabelLog";
 import Input from "./Components/Input/InputLog";
-import { Link, Redirect } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+
 import API from "../../services/api";
 import Swal from "sweetalert2";
 
@@ -136,10 +136,9 @@ const Login = () => {
       </a>
 
       <div className="cuentaLog">¿No tienes una cuenta?</div>
-
-      <a className="registrate" href="#example">
+      <Link to={"/register"} className="registrate">
         Regístrate
-      </a>
+      </Link>
     </div>
   );
 };
