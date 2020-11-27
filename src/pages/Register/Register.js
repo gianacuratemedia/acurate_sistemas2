@@ -8,9 +8,9 @@ import "./Register.css";
 import Title from "./Components/Title/TitleReg";
 import Label from "./Components/Label/LabelReg";
 import Input from "./Components/Input/InputReg";
-
-import axios from "axios";
+import { Link } from "react-router-dom";
 import API from "../../services/api";
+import Swal from "sweetalert2";
 
 const Register = () => {
   //Estados
@@ -48,9 +48,23 @@ const Register = () => {
       })
         .then(function (response) {
           console.log(response);
+          Swal.fire({
+            title: "Registro éxitoso!",
+            text: "Se le mandara un correo para validación de usuario",
+            icon: "success",
+            confirmButtonText: "Continuar",
+          }).then(function () {
+            window.location = "/login";
+          });
         })
         .catch(function (error) {
           console.log(error);
+          Swal.fire({
+            title:"Error!",
+            text: "Reintenta por favor",
+            icon: "error",
+            confirmButtonText: "Reintentar",
+          });
         });
       console.log("account:", account);
     }
@@ -115,11 +129,9 @@ const Register = () => {
       </div>
 
       <div className="cuenta">¿Ya tienes una cuenta?</div>
-
-      <a className="inicia" href="#example">
+      <Link to={"/login"} className="inicia">
         Inicia Sesión
-      </a>
-
+      </Link>
       <img className="registro" src={imagenes.registro} />
     </div>
   );
