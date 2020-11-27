@@ -6,9 +6,10 @@ import "./Login.css";
 import Title from "./Components/Title/TitleLog";
 import Label from "./Components/Label/LabelLog";
 import Input from "./Components/Input/InputLog";
-
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import API from "../../services/api";
+import Swal from "sweetalert2";
 
 const Login = () => {
   //Estados
@@ -56,11 +57,29 @@ const Login = () => {
       const response = API.post(`users/login/`, {
         email: user,
         password: password,
-      }).then(function (response) {
-        console.log(response);
-      }).catch(function (error) {
-        console.log(error);
-      });
+      })
+        .then(function (response) {
+          console.log(response);
+          Swal.fire({
+            title: "Login Success!",
+            text: "Welcome!",
+            icon: "success",
+            timer: 1200,
+            showCancelButton: false,
+            showConfirmButton: false,
+          }).then(function () {
+            window.location = "/User";
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+          Swal.fire({
+            title: "Error!",
+            text: "Reintenta por favor",
+            icon: "error",
+            confirmButtonText: "Reintentar",
+          });
+        });
       console.log("account:", account);
     }
   }
