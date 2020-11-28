@@ -100,8 +100,9 @@ TEMPLATES = [
 AUTH_USER_MODEL = 'Usuarios_k.User'
 
 WSGI_APPLICATION = 'knowtured.wsgi.application'
-
-
+#para permitir el alojamiento de archivos 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
