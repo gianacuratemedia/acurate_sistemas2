@@ -6,4 +6,4 @@ class CalificaSerializer(serializers.ModelSerializer):
 
    class Meta:
        model = Califica
-       fields = ('pk','usuario_alumno', 'usuario_tutor','calificacion')
+       fields = ('id','usuario_tutor', 'calificacion')
