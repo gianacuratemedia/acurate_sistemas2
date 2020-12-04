@@ -4,8 +4,8 @@ from Categorias_k.models import *
 # Create your models here.
 class Selecciona(models.Model):
      
-     usuario = models.ForeignKey(CustomUser,on_delete=models.CASCADE) 
-     categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE) 
+     owner = models.ForeignKey(to=User,on_delete=models.CASCADE) 
+     categoria= models.ForeignKey(to=Categoria, on_delete=models.CASCADE) 
      fecha_hora=models.DateTimeField('Registro de hora',auto_now_add=True)
 
 
