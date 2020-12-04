@@ -1,69 +1,70 @@
 from django.shortcuts import render
-
-from django.http.response import JsonResponse
-from rest_framework.parsers import JSONParser 
-from rest_framework import status
- 
+from rest_framework import status, generics
+from rest_framework.response import Response
+from django.shortcuts import render
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
+from .serializers import SigueSerializer
 from .models import Sigue
-from .serializers import *
-from rest_framework.decorators import api_view
+from Usuarios_k.models import User
+from rest_framework import permissions
+from .permissions import IsOwner
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import permission_classes
 
-@api_view(['GET', 'POST', 'DELETE'])
-def sigue_list(request):
-    # GET lista de tutores que sigue el usuario, POST seguir a un tutor, DELETE dejar de seguir a un tutor
-  if request.method == 'GET':
-        sigues = Sigue.objects.all()
-        
-        title = request.GET.get('title', None)
-        if title is not None:
-            sigues = sigues.filter(title__icontains=title)
-        
-        sigues_serializer = SigueSerializer(sigues, many=True)
-        return JsonResponse(sigues_serializer.data, safe=False)
-       
-  elif request.method == 'POST':
-         
-      sigue_data = JSONParser().parse(request)
-      sigue_serializer = SigueSerializer(data=sigue_data)
-      if sigue_serializer.is_valid():
-        sigue_serializer.save()
-        return JsonResponse(sigue_serializer.data, status=status.HTTP_201_CREATED) 
-        return JsonResponse(sigue_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-      elif request.method == 'DELETE':
-        count = Sigue.objects.all().delete()
-        return JsonResponse({'message': '{} Los tutores a los que sigues han sido eliminados'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
-@api_view(['GET', 'PUT', 'DELETE'])
-def sigue_detail(request, pk):
-    # find sigue by pk (id)
-    try: 
-        sigue = Sigue.objects.get(pk=pk) 
-    except Sigue.DoesNotExist: 
-        return JsonResponse({'message': 'No sigues al tutor seleccionado'}, status=status.HTTP_404_NOT_FOUND) 
-         
-          # GET / PUT / DELETE sigue
-    if request.method == 'GET': 
-         sigue_serializer = SigueSerializer(sigue) 
-         return JsonResponse(sigue_serializer.data) 
-        
-    elif request.method == 'PUT': 
-        sigue_data = JSONParser().parse(request) 
-        sigue_serializer = SigueSerializer(sigue, data=sigue_data) 
-        if sigue_serializer.is_valid(): 
-            sigue_serializer.save() 
-            return JsonResponse(sigue_serializer.data) 
-        return JsonResponse(sigue_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-    elif request.method == 'DELETE': 
-        sigue.delete() 
-        return JsonResponse({'message': 'Has dejado de seguir a este usuario'}, status=status.HTTP_204_NO_CONTENT)
+
+# Create your views here.
+class SigueList(ListCreateAPIView):
+
+    permission_classes = (permissions.IsAuthenticated,)
+    queryset = Sigue.objects.all()
+    def get_queryset(self):
+        return self.queryset.filter(usuario_alumno=self.request.user)
     
+
+    def post(self, request):
+        serializer = SigueSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(usuario_alumno=self.request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SigueDetail(RetrieveUpdateDestroyAPIView):
+    serializer_class = SigueSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwner,)
+
+    def get_queryset(self, id):
+        try:
+            sigue = Sigue.objects.get(id=id)
+        except Sigue.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return sigue
+
+    # Get sigue
+    def get(self, request, id):
+
+        sigue = self.get_queryset(id)
+        serializer = SigueSerializer(sigue)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # Delete un tutor
+    def delete(self, request, id):
+
+        sigue = self.get_queryset(id)
         
-@api_view(['GET'])
-def sigue_list_published(request):
-     # GET todos los tutores que sigues
-    sigues = Sigue.objects.filter(published=True)
-        
-    if request.method == 'GET': 
-        sigues_serializer = SigueSerializer(sigues, many=True)
-        return JsonResponse(sigues_serializer.data, safe=False)
+
+        if(request.user == sigue.usuario_alumno): # If student is who makes request
+            sigue.delete()
+            content = {
+                'status': 'NO CONTENT'
+            }
+            return Response(content, status=status.HTTP_204_NO_CONTENT)
+        else:
+            content = {
+                'status': 'UNAUTHORIZED'
+            }
+            return Response(content, status=status.HTTP_401_UNAUTHORIZED)
+   
