@@ -6,4 +6,4 @@ class SigueSerializer(serializers.ModelSerializer):
 
    class Meta:
        model = Sigue
-       fields = ('pk','usuario_alumno', 'usuario_tutor','fecha_hora')
+       fields = ('id','usuario_tutor')
