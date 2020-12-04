@@ -1,0 +1,181 @@
+.chat{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.headerSection1{
+  background-color: white;
+  z-index: 2;
+  height: 130px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: gray;
+
+}
+
+.logo1{
+  margin-left: 1em;
+  width: 250px;
+  height: 70px;
+}
+
+.com1{
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  color: gray;
+  font-size: 18px;
+}
+
+.categorias21{
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  color: gray;
+  font-size: 18px;
+}
+
+.barrabusqueda1{
+  position: relative;
+  margin-top: 0.5em;
+  margin-left: 3em;
+  width: 500px;
+  height: 40px;
+  background-color:white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.icono-video1{
+  width: 25px;
+  height: 25px;
+  margin-left: 4em;
+}
+
+.campana1{
+  width: 25px;
+  height: 25px;
+  margin-left: 1em;
+}
+
+.icono-usuario1{
+  width: 30px;
+  height: 30px;
+  margin-left: 1em;
+}
+
+
+.seccion-chatsgrupos{
+  width: 300px;
+  height: 700px;
+  background-color: white;
+  border-style: none solid none none;
+  border-width: 1.5px;
+  border-color: #cecccc;
+
+}
+
+.seccion-chat{
+  margin-left: 300px;
+  margin-top: -700px;
+  width: 1100px;
+  height: 700px;
+  background-color: aliceblue;
+  padding: 40px 40px 40px 40px;
+}
+
+.grupostitulo{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -2em;
+
+}
+.grupos{
+  position: absolute;
+
+  margin-top: 2em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+}
+.icono-grupo{
+  height: 3em;
+  width: 3em;
+}
+
+.grupostitulo1{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -3em;
+
+}
+.grupos1{
+  position: absolute;
+  margin-top: 7em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+  border-style: solid none none none;
+  border-color: #cecccc;
+
+}
+.grupos2{
+  position: absolute;
+  margin-top: 12em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+  border-style: solid none none none;
+  border-color: #cecccc;
+}
+.grupos3{
+  position: absolute;
+  margin-top: 17em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+  border-style: solid none none none;
+  border-color: #cecccc;
+}
+.grupos4{
+  position: absolute;
+  margin-top: 22em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+  border-style: solid none none none;
+  border-color: #cecccc;
+}
+.grupos5{
+  position: absolute;
+  margin-top: 27em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+  border-style: solid none solid none;
+  border-color: #cecccc;
+}
+
+.chats_individual{
+  position: absolute;
+  margin-top: 30em;
+  height: 5em;
+  width: 20em;
+  padding: 20px 20px 20px 20px;
+
+}
+
+.grupos_desc{
+  font-size: 10px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0em;
+  margin-left: 6em;
+  color: #cecccc;
+
+}

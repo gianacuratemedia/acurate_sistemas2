@@ -1,0 +1,102 @@
+.advancementLevel{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.headerSection1{
+  background-color: white;
+  z-index: 2;
+  height: 130px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: #cecccc;
+}
+
+.logo1{
+  margin-left: 1em;
+  width: 250px;
+  height: 70px;
+}
+
+.com1{
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  color: gray;
+  font-size: 18px;
+}
+
+.categorias21{
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  color: gray;
+  font-size: 18px;
+}
+
+.barrabusqueda1{
+  position: relative;
+  margin-top: 0.5em;
+  margin-left: 3em;
+  width: 500px;
+  height: 40px;
+  background-color:white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.icono-video1{
+  width: 25px;
+  height: 25px;
+  margin-left: 4em;
+}
+
+.campana1{
+  width: 25px;
+  height: 25px;
+  margin-left: 1em;
+}
+
+.icono-usuario1{
+  width: 30px;
+  height: 30px;
+  margin-left: 1em;
+}
+
+
+
+
+
+.avance-cursos{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 5px #cecccc;
+  margin-left: 4em;
+  margin-top: 2em;
+  width: 1220px;
+  height: 600px;
+  padding: 20px 20px 20px 40px;
+}
+
+.avanceC{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+}
+.nom-cursos{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+}
+.de{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #cecccc;
+}
+.progress-bar progress-bar-striped bg-danger progress-bar-animated{
+  background-color: rgb(180, 180, 252);
+}

@@ -13,7 +13,13 @@ import UserProfile from "./pages/UserProfile/UserProfile";
 import UserCourses from "./pages/UserProfile/UserCourses";
 import UserTeacher from "./pages/UserTeacher/UserTeacher";
 import UserTeacherProfile from "./pages/UserTeacherProfile/UserTeacherProfile";
-
+import UserTeacherCourses from "./pages/UserTeacherCourses/UserTeacherCourses";
+import AdvancementLevel from "./pages/AdvancementLevel/AdvancementLevel";
+import Chat from "./pages/Chat/Chat";
+import UserTeacherResources from "./pages/UserTeacherResources/UserTeacherResources";
+import UserTeacherResources2 from "./pages/UserTeacherResources/UserTeacherResources2";
+import UserTeacherResources3 from "./pages/UserTeacherResources/UserTeacherResources3";
+import UserTeacherResources4 from "./pages/UserTeacherResources/UserTeacherResources4";
 
 function App() {
   return (
@@ -30,11 +36,20 @@ function App() {
         <Route exact path="/UserProfile" component={UserProfile} />
         <Route exact path="/UserCourses" component={UserCourses} />
         <Route exact path="/UserTeacherProfile" component={UserTeacherProfile} />
+        <Route exact path="/UserTeacherCourses" component={UserTeacherCourses} /> 
+        <Route exact path="/AdvancementLevel" component={AdvancementLevel} /> 
+        <Route exact path="/Chat" component={Chat} />
+        <Route exact path="/UserTeacherResources" component={UserTeacherResources} /> 
+        <Route exact path="/UserTeacherResources2" component={UserTeacherResources2} /> 
+        <Route exact path="/UserTeacherResources3" component={UserTeacherResources3} /> 
+        <Route exact path="/UserTeacherResources4" component={UserTeacherResources4} /> 
       </Switch>
     </BrowserRouter>
     </>
   );
 }
+
+
 
 export default App;
 
