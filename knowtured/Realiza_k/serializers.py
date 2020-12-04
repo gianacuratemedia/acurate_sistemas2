@@ -2,8 +2,14 @@ from rest_framework import serializers
 from .models import Realiza
 
 
-class RealizaSerializer(serializers.ModelSerializer):
+class RealizaSerializer_alumno(serializers.ModelSerializer):
 
    class Meta:
        model = Realiza
-       fields = ('pk','usuario_id', 'contenido_id','fecha_hora', 'calificacion','archivo')
+       fields = ('id','contenido_id', 'fecha_hora','archivo')
+
+class RealizaSerializer_tutor(serializers.ModelSerializer):
+
+   class Meta:
+       model = Realiza
+       fields = ('id','contenido_id','fecha_hora','calificacion','archivo')
