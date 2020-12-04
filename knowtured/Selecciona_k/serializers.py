@@ -1,10 +1,15 @@
 from rest_framework import serializers
-from .models import Selecciona
+from .models import Realiza
 
 
-class SeleccionaSerializer(serializers.ModelSerializer):
+class RealizaSerializer_alumno(serializers.ModelSerializer):
 
    class Meta:
-       model = Selecciona
-       fields = ('pk','usuario', 'categoria','fecha_hora')
-        
+       model = Realiza
+       fields = ('id','contenido_id', 'fecha_hora','archivo')
+
+class RealizaSerializer_tutor(serializers.ModelSerializer):
+
+   class Meta:
+       model = Realiza
+       fields = ('id','contenido_id','fecha_hora','calificacion','archivo')
