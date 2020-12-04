@@ -1,70 +1,69 @@
 from django.shortcuts import render
-
-from django.http.response import JsonResponse
-from rest_framework.parsers import JSONParser 
-from rest_framework import status
- 
+from rest_framework import status, generics
+from rest_framework.response import Response
+from django.shortcuts import render
+from rest_framework.generics import RetrieveUpdateDestroyAPIView,ListCreateAPIView
+from .serializers import CalificaSerializer
 from .models import Califica
-from .serializers import *
-from rest_framework.decorators import api_view
-
-@api_view(['GET', 'POST', 'DELETE'])
-def califica_list(request):
-    # GET lista de calificaciones, POST registrar calificación, DELETE una de las calificaciones
-  if request.method == 'GET':
-        calificas =Califica.objects.all()
-        
-        title = request.GET.get('title', None)
-        if title is not None:
-            calificas = calificas.filter(title__icontains=title)
-        
-        calificas_serializer = CalificaSerializer(calificas, many=True)
-        return JsonResponse(calificas_serializer.data, safe=False)
-       
-  elif request.method == 'POST':
-         
-      califica_data = JSONParser().parse(request)
-      califica_serializer = CalificaSerializer(data=califica_data)
-      if califica_serializer.is_valid():
-       califica_serializer.save()
-      return JsonResponse(califica_serializer.data, status=status.HTTP_201_CREATED) 
-      return JsonResponse(califica_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-  elif request.method == 'DELETE':
-        count = Califica.objects.all().delete()
-        return JsonResponse({'message': '{} Todas las calificaciones han sido eliminadas'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
-@api_view(['GET', 'PUT', 'DELETE'])
-def califica_detail(request, pk):
-    # find califica by pk (id)
-     try: 
-      califica = Califica.objects.get(pk=pk) 
-     except Califica.DoesNotExist: 
-      return JsonResponse({'message': 'La calificación seleccionada no existe'}, status=status.HTTP_404_NOT_FOUND) 
-  
-    # GET / PUT / DELETE califica
-
-      if request.method == 'GET': 
-         califica_serializer = CalificaSerializer(califica) 
-         return JsonResponse(califica_serializer.data) 
-        
-      elif request.method == 'PUT': 
-       califica_data = JSONParser().parse(request) 
-       califica_serializer = CalificaSerializer(califica, data=califica_data) 
-       if califica_serializer.is_valid(): 
-        califica_serializer.save() 
-        return JsonResponse(califica_serializer.data) 
-        return JsonResponse(califica_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-      elif request.method == 'DELETE': 
-        califica.delete() 
-        return JsonResponse({'message': 'Has eliminado la calificación seleccionada'}, status=status.HTTP_204_NO_CONTENT)
+from Usuarios_k.models import User
+from rest_framework import permissions
+from .permissions import IsOwner
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import permission_classes
 
 
-@api_view(['GET'])
-def califica_list_published(request):
-     # GET todas las calificaciones 
-    calificas = Califica.objects.filter(published=True)
+# Create your views here.
+class CalificaList(ListCreateAPIView):
+
+    permission_classes = (permissions.IsAuthenticated,)
+    queryset = Califica.objects.all()
+
+    def get_queryset(self):
+        return self.queryset.filter(usuario_alumno=self.request.user)
+
+    def post(self, request):
+        serializer = CalificaSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(usuario_alumno=self.request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CalificaDetail(RetrieveUpdateDestroyAPIView):
+    serializer_class = CalificaSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwner,)
+
+    def get_queryset(self, id):
+        try:
+            califica = Califica.objects.get(id=id)
+        except Califica.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return califica
+
+    # Get califica
+    def get(self, request, id):
+
+        califica = self.get_queryset(id)
+        serializer = CalificaSerializer(califica)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # Delete una calificacion
+    def delete(self, request, id):
+
+        califica = self.get_queryset(id)
         
-    if request.method == 'GET': 
-        calificas_serializer = CalificaSerializer(calificas, many=True)
-        return JsonResponse(calificas_serializer.data, safe=False)
+
+        if(request.user == califica.usuario_alumno): # If student is who makes request
+            califica.delete()
+            content = {
+                'status': 'NO CONTENT'
+            }
+            return Response(content, status=status.HTTP_204_NO_CONTENT)
+        else:
+            content = {
+                'status': 'UNAUTHORIZED'
+            }
+            return Response(content, status=status.HTTP_401_UNAUTHORIZED)
+   
