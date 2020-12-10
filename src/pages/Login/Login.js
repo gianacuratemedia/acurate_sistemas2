@@ -68,6 +68,9 @@ const Login = () => {
             showCancelButton: false,
             showConfirmButton: false,
           }).then(function () {
+            localStorage.setItem('token', response.data.tokens.access);
+            localStorage.setItem('username', response.data.username);
+            localStorage.setItem('email', response.data.email);
             window.location = "/User";
           });
         })
