@@ -51,7 +51,7 @@ class ForoList_Curso_GP(ListCreateAPIView):
 
 #Get y delete por parametro de id_foro y curso_id en url
 class ForoDetail(RetrieveUpdateDestroyAPIView):
-    serializer_class = ForoSerializerGet
+    serializer_class = ForoSerializerr
  
     permission_classes = (permissions.IsAuthenticated, IsOwner,)
     #Obtener mensajes del foro por curso_id
@@ -131,7 +131,7 @@ class ComentarioList_Curso_Foro_GP(ListCreateAPIView):
 
 #Get y delete por parametro de foro_id e id_mensaje en url
 class ComentarioDetail(RetrieveUpdateDestroyAPIView):
-    serializer_class = ForoSerializerGet
+    serializer_class = ForoSerializerr
  
     permission_classes = (permissions.IsAuthenticated, IsOwner,)
     #Obtener mensajes por foro_id e id del mensaje 
@@ -188,4 +188,4 @@ class ComentarioDetail(RetrieveUpdateDestroyAPIView):
                 'status': 'UNAUTHORIZED'
             }
             return Response(content, status=status.HTTP_401_UNAUTHORIZED)
-   
+
