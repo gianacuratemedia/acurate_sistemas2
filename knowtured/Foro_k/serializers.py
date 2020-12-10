@@ -1,21 +1,29 @@
 from rest_framework import serializers
-from .models import Foro
+from .models import Foro, Comentario
 
-#Para crear un mensaje en el foro de un curso
-class ForoSerializerPost(serializers.ModelSerializer):
+#Para crear un foro de un curso
+class ForoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Foro
-        fields = ['id','curso_id','mensaje']
+        fields = ['id', 'nombre']
 
-#Para visualizar los mensajes del foro de un curso 
-class ForoSerializerGet(serializers.ModelSerializer):
+#Get and delete by id and curso_id
+class ForoSerializerr(serializers.ModelSerializer):
     class Meta:
         model = Foro
-        fields = ['id','curso_id','owner','mensaje','created_at']
+        fields = ['id','curso_id', 'nombre']
 
 
-#Para actualizar un mensaje en el foro de un curso
-class ForoSerializerUpdateMessage(serializers.ModelSerializer):
+
+#Para crear un comentario de un foro
+class ComentarioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Foro
-        fields = ['id','mensaje']
+        model = Comentario
+        fields = ['id', 'mensaje']
+
+
+#Para crear un comentario de un foro
+class ComentarioSerializerr(serializers.ModelSerializer):
+    class Meta:
+        model = Comentario
+        fields = ['id', 'mensaje','username','created_at']
