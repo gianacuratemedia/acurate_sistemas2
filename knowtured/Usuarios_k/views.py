@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from rest_framework import generics, status, views, permissions
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer
+from .serializers import GetMyProfileSerializer, UpdateMyProfileSerializer, TeacherListSerializer
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User
-from .utils import Util
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 import jwt
+from rest_framework.generics import ListAPIView, UpdateAPIView
 from django.conf import settings
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
@@ -19,6 +20,8 @@ from .utils import Util
 from django.shortcuts import redirect
 from django.http import HttpResponsePermanentRedirect
 import os
+from .permissions import IsOwner
+from django.db.models import Q
 
 
 class CustomRedirect(HttpResponsePermanentRedirect):
@@ -43,7 +46,7 @@ class RegisterView(generics.GenericAPIView):
         relativeLink = reverse('email-verify')
         absurl = 'http://'+current_site+relativeLink+"?token="+str(token)
         email_body = 'Hola '+user.username + \
-            ' utiliza el siguiente link para verificar tu cuenta \n' + absurl
+            ', utiliza el siguiente link para verificar tu cuenta \n' + absurl
         data = {'email_body': email_body, 'to_email': user.email,
                 'email_subject': 'Verify your email'}
 
@@ -80,7 +83,7 @@ class LoginAPIView(generics.GenericAPIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
+      
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
     serializer_class = ResetPasswordEmailRequestSerializer
@@ -118,7 +121,7 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         return Response({'success': True, 'message': 'Se ha restablecido la contraseña'}, status=status.HTTP_200_OK)
 
 
-class LogoutAPIView(generics.GenericAPIView):
+class LogoutAPIView(generics.GenericAPIView):   
     serializer_class = LogoutSerializer
 
     permission_classes = (permissions.IsAuthenticated,)
@@ -160,3 +163,87 @@ class PasswordTokenCheckAPI(generics.GenericAPIView):
                     
             except UnboundLocalError as e:
                 return Response({'error': 'Token no válido, por favor solicite otro'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+#Get my profile
+class MyProfile(ListAPIView):
+    serializer_class = GetMyProfileSerializer
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self):
+        return self.queryset.filter(id=self.request.user.id)
+
+#Update my profile 
+class MyProfileDetail(UpdateAPIView):
+    serializer_class = UpdateMyProfileSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwner,)
+
+    def get_queryset(self, id):
+        try:
+            profile = User.objects.get(id=id)
+        except User.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return profile
+
+    # Get my profile
+    def get(self, request, id):
+
+        profile = self.get_queryset(id)
+        serializer = UpdateMyProfileSerializer(profile)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # Update my profile
+    def put(self, request, id):
+        
+        profile = self.get_queryset(id)
+
+        if(request.user.username == profile.username): # Si el perfil corresponde a quien hace el request
+            serializer = UpdateMyProfileSerializer(profile, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            content = {
+                'status': 'UNAUTHORIZED'
+            }
+            return Response(content, status=status.HTTP_401_UNAUTHORIZED)
+
+ 
+#Filtrar lista de usuarios por campo is_teacher
+
+class ProfesoresList(ListAPIView):
+    serializer_class = TeacherListSerializer
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self):
+        return self.queryset.filter(is_teacher=True)
+
+#Barra de busqueda profesor por username, nombre o apellidos 
+
+class BusquedaProfesor(ListAPIView):
+    serializer_class = TeacherListSerializer
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self,*args, **kwargs):
+        busqueda=self.kwargs['busqueda']
+        try:
+            user = User.objects.all().filter(
+            Q(username__icontains=busqueda) 
+            | Q(nombre__icontains=busqueda)
+            | Q(apellido_paterno__icontains=busqueda)
+            | Q(apellido_materno__icontains=busqueda)
+            ).filter(is_teacher=True)
+        except User.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return user
+
+
+
