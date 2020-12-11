@@ -72,7 +72,7 @@ class LoginSerializer(serializers.ModelSerializer):
                 detail='Continue con su inicio de sesión usando ' + filtered_user_by_email[0].auth_provider)
 
         if not user:
-            raise AuthenticationFailed('Credenciales inválidas, intantalo de nuevo )
+            raise AuthenticationFailed('Credenciales inválidas, intantalo de nuevo' )
         if not user.is_active:
             raise AuthenticationFailed('Cuenta inhabilitada, contacte al administrador')
         if not user.is_verified:
@@ -145,3 +145,28 @@ class LogoutSerializer(serializers.Serializer):
 
         except TokenError:
             self.fail('bad_token')
+
+
+#Get my profile
+class GetMyProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email','nombre','apellido_paterno','apellido_materno',
+        'telefono','fecha_nacimiento','biografia','dias_premium','direccion','ciudad',
+        'estado','pais','codigo_postal','nivel','photo','is_teacher']
+
+#Update User profile 
+class UpdateMyProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id','nombre','apellido_paterno','apellido_materno',
+        'telefono','fecha_nacimiento','biografia','dias_premium','direccion','ciudad',
+        'estado','pais','codigo_postal','nivel','photo','is_teacher']
+
+
+#Teacher List 
+class TeacherListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['nombre','apellido_paterno','apellido_materno',
+        'estado','pais','biografia','photo','username']
