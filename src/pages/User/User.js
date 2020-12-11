@@ -62,40 +62,40 @@ function User() {
                     
         </div> 
 
-        <div class="seccion-cursos">            
+        <div class="seccioncursos">            
 
-            <div class="cont-curso1">
+            <div class="contcurso1">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Asesoria Personal</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>
             </div>
 
 
-            <div class="cont-curso2">
+            <div class="contcurso2">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Fundamentos de mercadotecnia</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>    
             </div>
 
-            <div class="cont-curso3">
+            <div class="contcurso3">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Aprende a cocinar</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>
             </div>
 
-            <div class="cont-curso4">
+            <div class="contcurso4">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Seminario de Lenguas</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>
             </div>
 
-            <div class="cont-curso5">
+            <div class="contcurso5">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Aprende Música</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>
             </div>
 
-            <div class="cont-curso6">
+            <div class="contcurso6">
                 <img className="video" src= {imagenes.video}/>
                 <div class="tit-estrella">Total Body Yoga</div>
                 <div class= "des-estrella">Impartido por Nombre Instructor</div>

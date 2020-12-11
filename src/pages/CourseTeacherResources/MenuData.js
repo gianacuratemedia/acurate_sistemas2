@@ -1,8 +1,8 @@
 
-export const MenuDataTeacher = [
+export const MenuData = [
     {
         title: 'Explorar',
-        path: '/Explore',
+        path: '/explorar',
         cName: 'nav-text' /*para el css*/
     },
 
@@ -14,24 +14,21 @@ export const MenuDataTeacher = [
 
     {
         title: 'Mis cursos',
-        path: '/UserCourses',
+        path: '/Course',
         cName: 'nav-text'
     },
 
     {
-        title: 'Estadísticas',
-        path: '/Statistics',
-        cName: 'nav-text'
-    },
-    {
-        title: 'Monetización',
-        path: '/Monetization',
-        cName: 'nav-text'
-    },
-    {
         title: 'Ajustes',
-        path: '/Settings',
+        path: '/ajustes',
         cName: 'nav-text'
     },
+
+    {
+        title: 'Nivel de alcance',
+        cName: 'nav-text'
+    },
+
+    
 
 ]
