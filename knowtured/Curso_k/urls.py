@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CursoDetail, CursoList, CursoListP
+from .views import CursoDetail, CursoList, CursoListP, BusquedaCurso
 from .views import ContenidoDetail
 from .views import ContenidoList, ContenidoListP, Curso_Categoria_List, CursoList_Categoria_GP
 
@@ -21,6 +21,8 @@ urlpatterns = [
     #Get, update and delete by curso_id and id_contenido
     path('all-cursos/<int:curso_id>/all-contenido/<int:id>', ContenidoDetail.as_view(), name="contenido-curso"),
     #Get contenido filtrado por curso sin permiso
-    path('', ContenidoListP.as_view(), name="all_contenido")
+    path('', ContenidoListP.as_view(), name="all_contenido"),
+    #Busqueda curso por nombre
+    path('all-cursos/buscar/<str:busqueda>',BusquedaCurso.as_view(), name="curso_busqueda")
     
 ]
