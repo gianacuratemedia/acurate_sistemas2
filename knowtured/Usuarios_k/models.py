@@ -1,13 +1,13 @@
-rom django.db import models
-
-# Create your models here.
+from django.db import models
+from datetime import date
+import datetime
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin)
 
 from django.db import models
 from rest_framework_simplejwt.tokens import RefreshToken
 
-
+# Create your models here.
 class UserManager(BaseUserManager):
 
     def create_user(self, username, email, password=None):
@@ -39,6 +39,11 @@ AUTH_PROVIDERS = {'facebook': 'facebook', 'google': 'google',
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=255, unique=True, db_index=True)
     email = models.EmailField(max_length=255, unique=True, db_index=True)
+    nombre=models.CharField(max_length=300, null=True)
+    apellido_paterno=models.CharField(max_length=300, null=True)
+    apellido_materno=models.CharField(max_length=300, null=True)
+    telefono=models.CharField(max_length=15, null=True)
+    fecha_nacimiento=models.DateField('Fecha de nacimiento',null=True)
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -57,6 +62,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     aceptacion_terminos=models.BooleanField(null= False, default=0)
     nivel=models.IntegerField(null=False, default=0)
     photo=models.ImageField(null=True, upload_to ='users/profile/')
+    rol=models.IntegerField(null=True, default=3)
+    is_teacher=models.BooleanField(null=False, default=0)
+    no_vistas=models.IntegerField(null=True)
+    no_seguidores=models.IntegerField(null=True)
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
@@ -73,16 +83,5 @@ class User(AbstractBaseUser, PermissionsMixin):
             'access': str(refresh.access_token)
         }
 
-
-
-def __str__(self):
-        return self.email
-
-def tokens(self):
-        refresh = RefreshToken.for_user(self)
-        return {
-            'refresh': str(refresh),
-            'access': str(refresh.access_token)
-        }
 
         
