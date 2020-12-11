@@ -6,8 +6,12 @@ class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
         fields = ['id', 'categoria_id','nombre', 'img_curso', 'premium', 'duracion','dificultad','limite','descripcion']
-    
-    
+
+class CursoSerializerr(serializers.ModelSerializer):
+    class Meta:
+        model = Curso
+        fields = ['id','nombre', 'img_curso', 'premium', 'duracion','dificultad','limite','descripcion']    
+
 class CursoSerializerP(serializers.ModelSerializer):
 
     class Meta:
@@ -21,11 +25,17 @@ class ContenidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contenido
-        fields = ['id', 'curso_id', 'tipo', 'mensaje','archivo','fecha_limite']
+        fields = ['id','tipo', 'mensaje','archivo_ubc','fecha_limite']
+
+class ContenidoSerializer1(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contenido
+        fields = ['id','curso_id','tipo', 'mensaje','archivo_ubc','fecha_limite']
 
 
 class PublicContenidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contenido
-        fields = ['curso_id', 'tipo', 'mensaje','archivo','fecha_limite']
+        fields = ['tipo', 'mensaje','archivo_ubc','fecha_limite']
