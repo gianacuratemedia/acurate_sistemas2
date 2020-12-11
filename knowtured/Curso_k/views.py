@@ -10,7 +10,13 @@ from rest_framework import permissions
 from .permissions import IsOwner
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import permission_classes
-
+from django.db.models import Q
+from django.views.generic import View
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import FileResponse
+from django.conf import settings
+from django.shortcuts import render, get_object_or_404
 
 class CursoDetail(RetrieveUpdateDestroyAPIView):
     serializer_class = CursoSerializer
@@ -210,7 +216,7 @@ class ContenidoList(ListCreateAPIView):
 
     # Create un nuevo contenido por curso
        
-    def post(self, request, *args, **kwargs):
+    def post(self, request,*args, **kwargs,):
         curso_id= Curso.objects.get(id=self.kwargs['curso_id'])
         serializer = ContenidoSerializer(data=request.data)
         if serializer.is_valid():
@@ -225,3 +231,39 @@ class ContenidoList(ListCreateAPIView):
 class ContenidoListP(ListAPIView):
        serializer_class = PublicContenidoSerializer
        queryset = Contenido.objects.all().order_by('curso_id')
+
+
+
+
+
+#Barra de busqueda curso por nombre o descripcion
+
+class BusquedaCurso(ListAPIView):
+    serializer_class = CursoSerializerr
+    queryset = Curso.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self,*args, **kwargs):
+        busqueda=self.kwargs['busqueda']
+        try:
+            curso = Curso.objects.all().filter(
+            Q(nombre__icontains=busqueda) 
+            | Q(descripcion__icontains=busqueda)
+            )
+        except Curso.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return curso
+
+#Descargar archivo
+
+#class DocumentDownload(View):
+    #permission_classes = (permissions.IsAuthenticated,)
+
+    
+    #def get(self, request, relative_path):
+        #document =Contenido.objects.all().filter(archivo_ubc=relative_path)
+        #absolute_path = '{}/{}'.format(settings.MEDIA_ROOT, relative_path)
+        #response = FileResponse(open(absolute_path, 'rb'), as_attachment=True)
+        #return response
