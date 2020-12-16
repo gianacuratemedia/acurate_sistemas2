@@ -1,4 +1,4 @@
-rom django.db import models
+from django.db import models
 from Usuarios_k.models import User
 from Curso_k.models import Curso
 # Create your models here.
