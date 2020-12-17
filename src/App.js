@@ -20,6 +20,7 @@ import UserTeacherResources from "./pages/UserTeacherResources/UserTeacherResour
 import UserTeacherResources2 from "./pages/UserTeacherResources/UserTeacherResources2";
 import UserTeacherResources3 from "./pages/UserTeacherResources/UserTeacherResources3";
 import UserTeacherResources4 from "./pages/UserTeacherResources/UserTeacherResources4";
+import PasswordRcueperar from "./pages/RecuperarPassword/recuperarpass";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/UserTeacherResources2" component={UserTeacherResources2} /> 
         <Route exact path="/UserTeacherResources3" component={UserTeacherResources3} /> 
         <Route exact path="/UserTeacherResources4" component={UserTeacherResources4} /> 
+        <Route exact path="/recuperarPass" component={PasswordRcueperar} /> 
       </Switch>
     </BrowserRouter>
     </>
