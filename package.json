@@ -22,12 +22,8 @@
     "react-scripts": "3.4.3",
     "reactstrap": "^8.7.1",
     "semantic-ui-css": "^2.4.1",
-<<<<<<< HEAD
     "semantic-ui-react": "^2.0.1",
     "sweetalert2": "^10.10.4"
-=======
-    "semantic-ui-react": "^2.0.1"
->>>>>>> ec6fffafe8387687e246c3f33128e76a990d551e
   },
   "scripts": {
     "start": "react-scripts start",
