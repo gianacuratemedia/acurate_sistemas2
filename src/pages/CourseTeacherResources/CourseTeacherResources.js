@@ -3,22 +3,148 @@ import * as FaIcons from 'react-icons/fa';
 import * as BsIcons from "react-icons/bs";
 import * as BiIcons from "react-icons/bi";
 import * as AiIcons from 'react-icons/ai';
-import * as TiIcons from "react-icons/ti";
-import * as IoIcons from "react-icons/io";
 import { Link } from 'react-router-dom';
-import ReactDOM from "react-dom";
 import { MenuData } from './MenuData';
-import './Course.css';
+import './Course2.css';
 import imagenes from '../../assets/img/imagenes';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFile, faArrowAltCircleDown} from '@fortawesome/free-solid-svg-icons';
-import Ejemplo2 from "./MenuModal";
+import Ejemplo3 from "./Ejemplo3";
+function Collapsible(props){
 
+const[isOpen, setIsOpen] = useState(false);
+
+  return(
+    
+  <div className="collapsible">
+   <button className="toggle" onClick={() => setIsOpen(!isOpen)}>
+     {props.label}
+   </button>
+  {isOpen && <div className="content">{props.children}</div>}
+  </div> 
+  );
+} 
 /*--------------------------------------------------------*/
 
 
+class Ejemplo extends React.Component {
+  constructor() {
+    super();
+    this.state = { checked: false };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
+  handleChange(checked) {
+    this.setState({ checked });
+  }
+  render() {
+    return (
+      <div>
+        <div className="col-md-6  mb-2">
+          <div
+            className="btn-group btn-group-sm"
+            role="group"
+            aria-label="Basic example"
+          >
+            {/* Este es el boton 1 */}
+            <button
+              type="button"
+              id="btn-nquote"
+              className="button2"
+              onClick={() => this.handleChange(false)}
+            >
+              Todos mis cursos
+            </button>
+
+            {/* Este es el boton 2 */}
+            <button
+              type="button"
+              id="btn-flex"
+              className="button1"
+              onClick={() => this.handleChange(true)}
+            >
+              Recursos
+            </button>
+            {/*Este es el boton 3*/}
+            <button
+              type="button"
+              id="btn-flex"
+              className="button3"
+              onClick={() => this.handleChange(true)}
+            >
+              Tareas
+            </button>
+          </div>
+        </div>
+        <span>
+          {this.state.checked ? (
+            <div /* Este es el div 1 */ className="button1" >
+              
+<h4 className="title2">2 Descargas Nuevas</h4>
+<hr></hr>
+    <div className="tarea1">
+       <FontAwesomeIcon icon={faFile}  className="icon-document"></FontAwesomeIcon>
+
+       <div className="textdocument">
+         Modulo 1 Audio
+       </div>
+          <h5 className="description">Loremp  ipsun Loremp ipsun</h5>
+          <FontAwesomeIcon icon={faArrowAltCircleDown} onClick="#" className="icon-download"></FontAwesomeIcon>
+    </div>
+    <br></br>
+<hr></hr>
+       <div className="tarea2">
+        <FontAwesomeIcon icon={faFile} onClick="#" className="icon-document2"></FontAwesomeIcon>
+          <div className="textdocument">
+               Modulo 2 Audio
+               </div>
+               <h5 className="description">Loremp  ipsun Loremp ipsun</h5>
+               <FontAwesomeIcon icon={faArrowAltCircleDown} onClick="#" className="icon-download"></FontAwesomeIcon>
+        </div>          
+
+
+            </div>
+          ) : (
+            <div /* Este es el div 2 */ className="button2" >
+
+                     <div class="seccion-course">            
+
+                         <div className="curso1">
+                          <img className="videos" src= {imagenes.video}/>
+                          <div className="tit-estrella"><center>Asesoria Personal</center></div>
+                          <div class= "des-estrella">Impartido por Nombre Instructor</div>
+                        </div>
+
+
+                             <div className="curso2">
+                               <img className="videos" src= {imagenes.video}/>
+                               <div className="tit-estrella">Fundamentos de mercadotecnia</div>
+                               <div class= "des-estrella">Impartido por Nombre Instructor</div>    
+                             </div>
+
+                                    <div className="curso3">
+                                       <img className="videos" src= {imagenes.video}/>
+                                       <div className="tit-estrella">Aprende a cocinar</div>
+                                       <div class= "des-estrella">Impartido por Nombre Instructor</div>
+                                     </div>
+                                         
+                                          <div className="curso4">
+                                            <img className="videos" src= {imagenes.video}/>
+                                            <div className="tit-estrella">Aprende a cocinar</div>
+                                            <div class= "des-estrella">Impartido por Nombre Instructor</div>
+                                         </div> 
+                     </div>
+            </div>
+          ) 
+          }
+        </span>
+
+
+      </div>
+    );
+  }
+}
 
 /****------------------------NUEVO COMPONENT CON HOOKS--------------- */
 
@@ -54,7 +180,7 @@ import Ejemplo2 from "./MenuModal";
 
 
 
-function Course() {
+function CourseTeacherResources() {
     const [sidebar, setSidebar] = useState (false); /*No mostrar barra*/
     const [show, setShow] = useState(true);
 
@@ -62,14 +188,11 @@ function Course() {
     const showSidebar = () => setSidebar (!sidebar); /*Mostrar barra*/
     const[open, setOpen] = useState(false);
    
-
+   const [isOpen, setIsOpen] = useState(true);
    
-  return (
-        
+  return (  
         <>
-          
-
-
+        
                      <div className='navbar'>
                       <Link to='#' className='menu-bars'>
                        <FaIcons.FaBars onClick={showSidebar}/> {/*Icono de barras de react*/}
@@ -165,19 +288,11 @@ function Course() {
   <h2 className="title1"> Mis cursos</h2>
   
   <br></br>         
-<Ejemplo2/>
+<Ejemplo3/>
      
       
             </div>
             
-
-              
-
-
-
-         
-     
-
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}> {/*Si presiono icono de menu se ctiva */}
             <ul className='nav-menu-items' onClick={showSidebar}>
@@ -202,5 +317,5 @@ function Course() {
               }  
 
 
-export default Course;
+export default CourseTeacherResources;
 

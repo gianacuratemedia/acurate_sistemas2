@@ -3,21 +3,47 @@ import { Link } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import './Course.css';
 import imagenes from '../../assets/img/imagenes';
+import Modal from './Modal';
+import Prueba from './Prueba';
+
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFile, faArrowAltCircleDown, faFileAlt, faPaste, faArrowAltCircleUp} from '@fortawesome/free-solid-svg-icons';
 
 
-class Ejemplo2 extends Component {
+
+
+/*----------------------------MODAL----------------------------*/
+
+
+/*----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+class MenuModal extends Component {
   constructor() {
     super();
     this.state = { checked: false };
     this.handleChange = this.handleChange.bind(this);
+
+   /* const [show, setShow] = useState(false);
+    const closeModalHandler = () => setShow(false);
+    */
   }
 
   handleChange(checked) {
     this.setState({ checked });
   }
+
+ 
+
   render() {
     return (
       <div>
@@ -32,7 +58,7 @@ class Ejemplo2 extends Component {
               type="button"
               id="btn-nquote"
               className="button1"
-              onClick={() => this.handleChange('btn1')}
+              onClick={() => this.handleChange(false)}
             >
               Todos mis cursos
             </button>
@@ -42,7 +68,7 @@ class Ejemplo2 extends Component {
               type="button"
               id="btn-flex"
               className="button2"
-              onClick={() => this.handleChange('btn2')}
+              onClick={() => this.handleChange(true)}
             >
              Recursos
             </button>
@@ -69,7 +95,7 @@ class Ejemplo2 extends Component {
           </div>
         </div>
         <span>
-          {this.state.checked === 'btn1' && (
+          {this.state.checked === false && (
         <div /* Este es el div 1 */ className="button1" >
 
             <div class="seccion-course">            
@@ -102,7 +128,7 @@ class Ejemplo2 extends Component {
      
       </div>
           ) }
-           {this.state.checked ==='btn2' &&
+           {this.state.checked ===true &&
            (
             <div /* Este es el div 2 */ className="red2" >
               
@@ -164,16 +190,42 @@ class Ejemplo2 extends Component {
 
           {this.state.checked ==='btn4' &&
           (
-            <div /* Este es el div 4 */ className="button3">
-              calendario
+            <div /* Este es el div 4 */ className="red2">
+             <div>
+               <hr className="barra"></hr>
+             </div>
+
+              <div className="container-calendar">
+                <br></br>
+
+                <li>
+                  <a href="" className="button-horario">
+                    Agregar horario
+                 </a>
+               </li>
+
+              <Prueba/>
+              </div>
+              
+
+              
             </div>
           )}
         </span>
-
+        
+            <div className="modalContainer">
+            {/*   <h1>Este es un modal</h1> */}
+                <div>
+          {/*      <button onClick={() => setShow(true)} className="btn-openModal">Open Modal</button>  */}
+             {/*      <Modal show={show} closeModalHandler={closeModalHandler}/> */}
+                </div>
+            </div>
 
       </div>
+
+     
     );
   }
 }
 
-export default Ejemplo2;
+export default MenuModal;
