@@ -1,31 +1,26 @@
-import React, {useState} from 'react';
-import * as FaIcons from 'react-icons/fa';
+import React, { useState } from "react";
+import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 import * as BiIcons from "react-icons/bi";
-import * as AiIcons from 'react-icons/ai';
+import * as AiIcons from "react-icons/ai";
 import * as TiIcons from "react-icons/ti";
 import * as IoIcons from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
-import { MenuData } from './MenuData';
-import './Course.css';
-import imagenes from '../../assets/img/imagenes';
+import { MenuData } from "./MenuData";
+import "./Course.css";
+import imagenes from "../../assets/img/imagenes";
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFile, faArrowAltCircleDown} from '@fortawesome/free-solid-svg-icons';
-import Ejemplo2 from "./MenuModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFile,
+  faArrowAltCircleDown,
+} from "@fortawesome/free-solid-svg-icons";
+// import Ejemplo2 from "./MenuModal";
 
 /*--------------------------------------------------------*/
 
-
-
-
 /****------------------------NUEVO COMPONENT CON HOOKS--------------- */
-
-
-
-
-
 
 /* class HelloWorld extends React.Component{
 
@@ -52,63 +47,50 @@ import Ejemplo2 from "./MenuModal";
   }
 } */
 
-
-
 function Course() {
-    const [sidebar, setSidebar] = useState (false); /*No mostrar barra*/
-    const [show, setShow] = useState(true);
+  const [sidebar, setSidebar] = useState(false); /*No mostrar barra*/
+  const [show, setShow] = useState(true);
 
-    
-    const showSidebar = () => setSidebar (!sidebar); /*Mostrar barra*/
-    const[open, setOpen] = useState(false);
-   
+  const showSidebar = () => setSidebar(!sidebar); /*Mostrar barra*/
+  const [open, setOpen] = useState(false);
 
-   
   return (
-        
-        <>
-          
+    <>
+      <div className="navbar">
+        <Link to="#" className="menu-bars">
+          <FaIcons.FaBars onClick={showSidebar} />{" "}
+          {/*Icono de barras de react*/}
+        </Link>
 
+        <img className="logo" src={imagenes.logoazul} />
 
-                     <div className='navbar'>
-                      <Link to='#' className='menu-bars'>
-                       <FaIcons.FaBars onClick={showSidebar}/> {/*Icono de barras de react*/}
-                       </Link>
+        <div className="comunidad"> Comunidad </div>
 
-                         <img className="logo" src= {imagenes.logoazul}/>
+        <div className="categorias"> Categorias </div>
 
-                         <div className='comunidad'> Comunidad </div>
+        {/*Busqueda */}
+        <div className="barrabusqueda">
+          <label class="label-icon" for="search">
+            <i class="material-icons">search</i>
+          </label>
 
-                         <div className='categorias'> Categorias </div>
+          <input
+            id="search"
+            type="search"
+            placeholder="Encuentra cursos, certificaciones y profesores.."
+            required
+          />
+        </div>
 
-                           {/*Busqueda */}
-                               <div className="barrabusqueda">
-                                  <label class="label-icon" for="search">
-                                    <i class="material-icons">search</i>
-                                  </label>
-                                     
-                                     <input
-                                      id="search"
-                                      type="search"
-                                      placeholder="Encuentra cursos, certificaciones y profesores.."
-                                      required
-                                    />
-               </div>
+        <BsIcons.BsFillBellFill onClick="#" className="campana" />
+        <BiIcons.BiUserCircle onClick="#" className="icono-usuario" />
+      </div>
 
-            <BsIcons.BsFillBellFill onClick="#" className="campana"/>
-            <BiIcons.BiUserCircle onClick="#" className="icono-usuario"/>
-             </div>
-
-
-
-           
-    
-           {/*   <button onClick={()=> this.setState({show: false})}>Mis Cursos</button>
+      {/*   <button onClick={()=> this.setState({show: false})}>Mis Cursos</button>
              <button>Mis Cursos</button>
              <button>Mis Cursos</button> */}
-          <div>
-            
-          {/* <Collapsible label="Mis cursos">
+      <div>
+        {/* <Collapsible label="Mis cursos">
               <h1>This is the Collapsible</h1>
 
               <p>
@@ -158,49 +140,38 @@ function Course() {
                    <div class= "des-estrella">Impartido por Nombre Instructor</div>
                  </div>
             </Collapsible> */}
-              
-                   
-                
 
-  <h2 className="title1"> Mis cursos</h2>
-  
-  <br></br>         
-<Ejemplo2/>
-     
-      
-            </div>
-            
+        <h2 className="title1"> Mis cursos</h2>
 
-              
+        <br></br>
+        {/* <Ejemplo2 /> */}
+      </div>
 
-
-
-         
-     
-
-
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}> {/*Si presiono icono de menu se ctiva */}
-            <ul className='nav-menu-items' onClick={showSidebar}>
-                <li className='navbar-toggle'>
-                <Link to='#' className='menu-bars'>
-                    <AiIcons.AiOutlineClose/>
+      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        {" "}
+        {/*Si presiono icono de menu se ctiva */}
+        <ul className="nav-menu-items" onClick={showSidebar}>
+          <li className="navbar-toggle">
+            <Link to="#" className="menu-bars">
+              <AiIcons.AiOutlineClose />
+            </Link>
+          </li>
+          {MenuData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                {" "}
+                {/*Cuando se seleccione delarchivo menu data se pasara a la direccion que se tiene en path */}
+                <Link to={item.path}>
+                  <span>{item.title}</span>{" "}
+                  {/*Se mostrara el titulo indicado en archivo MenuData */}
                 </Link>
-                </li>
-                {MenuData.map((item, index) => {
-                    return(
-                        <li key= {index} className={item.cName}> {/*Cuando se seleccione delarchivo menu data se pasara a la direccion que se tiene en path */}
-                            <Link to={item.path}>
-                            <span>{item.title}</span> {/*Se mostrara el titulo indicado en archivo MenuData */}
-                            </Link>
-                        </li>
-                    );
-                })}
-            </ul>
-        </nav>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </>
-    );
-              }  
-
+  );
+}
 
 export default Course;
-
