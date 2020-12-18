@@ -135,34 +135,18 @@ class LogoutAPIView(generics.GenericAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
-    serializer_class = SetNewPasswordSerializer
+    
+   def get(self, request, uidb64, token):
 
-    def get(self, request, uidb64, token):
+      try:
+          id=smart_str(urlsafe_base64_decode(uidb64))
+          user=User.objects.get(id=id)
+          if not PasswordResetTokenGenerator().check_token(user, token):
+              return Response({'error':'Token no valido, por favor, solicita otro'},status=status.HTTP_401_UNAUTHORIZED )
+          return Response({'sucess':'True, credenciales validas'},status=status.HTTP_200_OK)
 
-        redirect_url = request.GET.get('redirect_url')
-
-        try:
-            id = smart_str(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(id=id)
-
-            if not PasswordResetTokenGenerator().check_token(user, token):
-                if len(redirect_url) > 3:
-                    return CustomRedirect(redirect_url+'?token_valid=False')
-                else:
-                    return CustomRedirect(os.environ.get('FRONTEND_URL', '')+'?token_valid=False')
-
-            if redirect_url and len(redirect_url) > 3:
-                return CustomRedirect(redirect_url+'?token_valid=True&message=Credentials Valid&uidb64='+uidb64+'&token='+token)
-            else:
-                return CustomRedirect(os.environ.get('FRONTEND_URL', '')+'?token_valid=False')
-
-        except DjangoUnicodeDecodeError as identifier:
-            try:
-                if not PasswordResetTokenGenerator().check_token(user, token):
-                    return CustomRedirect(redirect_url+'?token_valid=False')
-                    
-            except UnboundLocalError as e:
-                return Response({'error': 'Token no válido, por favor solicite otro'}, status=status.HTTP_400_BAD_REQUEST)
+      except DjangoUnicodeDecodeError as identifier:
+             return Response({'error':'Token no valido, por favor, pide uno nuevo'},status=status.HTTP_401_UNAUTHORIZED )
 
 
 
