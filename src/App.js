@@ -15,11 +15,6 @@ import UserTeacherProfile from "./pages/UserTeacherProfile/UserTeacherProfile";
 import UserTeacherCourse from "./pages/UserTeacherCourse/UserTeacherCourse";
 import AdvancementLevel from "./pages/AdvancementLevel/AdvancementLevel";
 import Chat from "./pages/Chat/Chat";
-import UserTeacherResources from "./pages/UserTeacherResources/UserTeacherResources";
-import UserTeacherResources2 from "./pages/UserTeacherResources/UserTeacherResources2";
-import UserTeacherResources3 from "./pages/UserTeacherResources/UserTeacherResources3";
-import UserTeacherResources4 from "./pages/UserTeacherResources/UserTeacherResources4";
-import PasswordRcueperar from "./pages/RecuperarPassword/recuperarpass";
 import Course from "./pages/Course/Course";
 import CourseTeacherResources from "./pages/CourseTeacherResources/CourseTeacherResources";
 import UploadFiles from "./pages/CourseTeacherResources/UploadFiles";
@@ -42,11 +37,6 @@ function App() {
         <Route exact path="/UserTeacherCourse" component={UserTeacherCourse} /> 
         <Route exact path="/AdvancementLevel" component={AdvancementLevel} /> 
         <Route exact path="/Chat" component={Chat} />
-        <Route exact path="/UserTeacherResources" component={UserTeacherResources} /> 
-        <Route exact path="/UserTeacherResources2" component={UserTeacherResources2} /> 
-        <Route exact path="/UserTeacherResources3" component={UserTeacherResources3} /> 
-        <Route exact path="/UserTeacherResources4" component={UserTeacherResources4} /> 
-        <Route exact path="/recuperarPass" component={PasswordRcueperar} /> 
         <Route exact path="/Course" component={Course} />
         <Route exact path="/CourseTeacherResources" component={CourseTeacherResources} /> 
         <Route exact path="/UploadFiles" component={UploadFiles} /> 
