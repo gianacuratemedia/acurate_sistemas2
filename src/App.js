@@ -4,8 +4,8 @@ import "./assets/css/App.css";
 
 // components
 import index from "./pages/IndexLayout/indexLayout";
-//import Login from "./pages/Login/Login";
-//import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 import Categorias from "./pages/Categorias/Categorias";
 import PlanSelection from "./pages/Plan Selection/PlanSelection";
 import User from "./pages/User/User";
@@ -18,6 +18,7 @@ import Chat from "./pages/Chat/Chat";
 import Course from "./pages/Course/Course";
 import CourseTeacherResources from "./pages/CourseTeacherResources/CourseTeacherResources";
 import UploadFiles from "./pages/CourseTeacherResources/UploadFiles";
+import RecuperarPass from "./pages/RecuperarPassword/recuperarpass";
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={index} />
-        {/*<Route exact path="/login" component={Login} />*/}
-        {/*<Route exact path="/register" component={Register} />*/}
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route exact path="/Categorias" component={Categorias}/>
         <Route exact path="/planselection" component={PlanSelection} />
         <Route exact path="/UserTeacher" component={UserTeacher} />
@@ -39,6 +40,7 @@ function App() {
         <Route exact path="/Course" component={Course} />
         <Route exact path="/CourseTeacherResources" component={CourseTeacherResources} /> 
         <Route exact path="/UploadFiles" component={UploadFiles} /> 
+        <Route exact path="/RecuperarPassword" component={RecuperarPass} /> 
       </Switch>
     </BrowserRouter>
     </>
