@@ -13,7 +13,7 @@ import imagenes from '../../assets/img/imagenes';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFile, faArrowAltCircleDown} from '@fortawesome/free-solid-svg-icons';
-import Ejemplo2 from "./MenuModal";
+// import MenuModal from "./MenuModal";
 
 /*--------------------------------------------------------*/
 
@@ -165,7 +165,7 @@ function Course() {
   <h2 className="title1"> Mis cursos</h2>
   
   <br></br>         
-<Ejemplo2/>
+{/* <MenuModal/> */}
      
       
             </div>
