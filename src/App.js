@@ -23,6 +23,7 @@ import PasswordRcueperar from "./pages/RecuperarPassword/recuperarpass";
 import Course from "./pages/Course/Course";
 import CourseTeacherResources from "./pages/CourseTeacherResources/CourseTeacherResources";
 import UploadFiles from "./pages/CourseTeacherResources/UploadFiles";
+import RecuperarPass from "./pages/RecuperarPassword/recuperarpass";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route exact path="/Course" component={Course} />
         <Route exact path="/CourseTeacherResources" component={CourseTeacherResources} /> 
         <Route exact path="/UploadFiles" component={UploadFiles} /> 
+        <Route exact path="/RecuperarPassword" component={RecuperarPass} /> 
       </Switch>
     </BrowserRouter>
   
