@@ -130,11 +130,10 @@ const Login = () => {
           {/*</link>*/}
         </button>
       </div>
-
-      <a className="olvide" href="#example">
-        ¿Olvidaste tu Contraseña?
-      </a>
-
+      <Link to={"/RecuperarPassword"} className="olvide">
+      ¿Olvidaste tu Contraseña?
+      </Link>
+  
       <div className="cuentaLog">¿No tienes una cuenta?</div>
       <Link to={"/register"} className="registrate">
         Regístrate
