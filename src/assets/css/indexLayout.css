@@ -6,97 +6,6 @@
   list-style: none;
 }
 
-/* .header {
-width: 100%;
-height: 1000px;
-background-size: cover;
-text-decoration: none;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.boton-iniciar{
-  text-decoration: none;
-  position: absolute;
-  margin: 20px 0px 0px 350px;
-  display: inline-block;
-
-  line-height: 2;
-  width: 160px;
-  padding: 0 1.5em;
-  color: white;
-  border-radius: 2em;
-  font-size: 18px;
-  
-}
-
-.buscador{
-margin: 0px 0px 0px 30px;
-width: 460px;
-height: 25px;
-font-size: 18px;
-color: rgb(15, 15, 15);
-border: none;
-outline: none;
-
-} */
-/* .buscador:focus{ */
- /** border-color: dodgerblue;
-  box-shadow: 0 0 8px 0 dodgerblue;**/
-/* } */
-
-/* .buscador:hover{
-  opacity: 1;
-  color:rgb(8, 22, 53);
-}
-
-.icon{
-position: absolute;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0px 0px 0px 10px;
-color: rgb(119, 118, 118);
-
-}
-
-.fondo{
-  position: absolute;
-  width: 1263px;
-  height: 600px;
-  margin: 0px 0px 0px 0px;
- 
-}
-
-.boton:hover{
-  background-color: rgb(197, 120, 5);
-}
-.boton:active{
-  transform: scale(.99);
-} */
-
 .parallax-container {
   height: 800px !important;
 }
@@ -107,6 +16,7 @@ color: rgb(119, 118, 118);
   font-size: 30px;
   width: 500px;
 }
+
 .azul{
   position: relative;
   width: 350px;

@@ -62,8 +62,8 @@ function App() {
         </div>
       </div>
 
-      <div class="section-white1">
-        <div class="row container">
+      <div className="section-white1">
+        <div className="row container">
           <div className="col s12 center">
             <div className="texto">
               Aprende de manera eficiente,<br></br>
