@@ -9,7 +9,7 @@ import * as HiIcons from 'react-icons/hi';
 import * as RiIcons from 'react-icons/ri';
 import './Chat.css';
 import { MenuDataChat } from './MenuDataChat';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

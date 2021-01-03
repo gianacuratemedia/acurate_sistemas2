@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import {link} from "react-router";
 
 import "./Login.css";
 
@@ -16,24 +15,6 @@ const Login = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
-
-  // handleSubmit = async event => {
-  //     event.preventDefault();
-
-  //     const response = await API.post(`graphql/`,{
-  //         query: `{
-  //             censos {
-  //               idestado
-  //               idmunicipio
-  //               municipio
-  //               UE
-  //               A111A
-  //             }
-  //           }`,
-  //       });
-
-  //     console.log(response.data);
-  // };
 
   function handleChange(name, value) {
     //Si es el ingreso (en text box) de usuario tomar info, si es el de contraseña no
@@ -68,9 +49,9 @@ const Login = () => {
             showCancelButton: false,
             showConfirmButton: false,
           }).then(function () {
-            localStorage.setItem('token', response.data.tokens.access);
-            localStorage.setItem('username', response.data.username);
-            localStorage.setItem('email', response.data.email);
+            localStorage.setItem("token", response.data.tokens.access);
+            localStorage.setItem("username", response.data.username);
+            localStorage.setItem("email", response.data.email);
             window.location = "/User";
           });
         })
@@ -88,59 +69,67 @@ const Login = () => {
   }
 
   return (
-    <div className="logincont">
-      <div className="titulo">
-        <Title text="Knowture"> </Title>
-      </div>
+    <div className="">
+      <div className="row ">
+        <div className="col s12 l4"></div>
+        <div className="col s12 l4">
+          <div className="logincont">
+            <div className="titulo">
+              <Title text="Knowture"> </Title>
+            </div>
 
-      <div className="labelCorreo">
-        <Label text="Correo Electrónico"> </Label>
-      </div>
-      <div className="inputCorreo">
-        <Input
-          attribute={{
-            //Apartado usuario
-            id: "usuario",
-            name: "usuario",
-            type: "text",
-            placeholder: "nombreusuario@hotmail.com",
-          }}
-          handleChange={handleChange}
-        ></Input>
-      </div>
+            <div className="labelCorreo">
+              <Label text="Correo Electrónico"> </Label>
+            </div>
+            <div className="inputCorreo">
+              <Input
+                attribute={{
+                  //Apartado usuario
+                  id: "usuario",
+                  name: "usuario",
+                  type: "text",
+                  placeholder: "nombreusuario@hotmail.com",
+                }}
+                handleChange={handleChange}
+              ></Input>
+            </div>
 
-      <div className="labelContraseña">
-        <Label text="Contraseña"> </Label>
-      </div>
-      <div className="inputContraseña">
-        <Input
-          attribute={{
-            //Apartado contraseña
-            id: "contraseña",
-            name: "contraseña",
-            type: "password",
-            placeholder: "Ingrese su contraseña",
-          }}
-          handleChange={handleChange}
-          param={passwordError}
-        ></Input>
-      </div>
+            <div className="labelContraseña">
+              <Label text="Contraseña"> </Label>
+            </div>
+            <div className="inputContraseña">
+              <Input
+                attribute={{
+                  //Apartado contraseña
+                  id: "contraseña",
+                  name: "contraseña",
+                  type: "password",
+                  placeholder: "Ingrese su contraseña",
+                }}
+                handleChange={handleChange}
+                param={passwordError}
+              ></Input>
+            </div>
 
-      <div className="boton-iniciaSesion-container">
-        <button onClick={handleSubmit} className="boton-inicia-sesion">
-          {/*<link to={"/register"}> Enlace a pagina*/}
-          Inicia Sesión
-          {/*</link>*/}
-        </button>
+            <div className="boton-iniciaSesion-container">
+              <button onClick={handleSubmit} className="boton-inicia-sesion">
+                {/*<link to={"/register"}> Enlace a pagina*/}
+                Inicia Sesión
+                {/*</link>*/}
+              </button>
+            </div>
+            <Link to={"/RecuperarPassword"} className="olvide">
+              ¿Olvidaste tu Contraseña?
+            </Link>
+
+            <div className="cuentaLog">¿No tienes una cuenta?</div>
+            <Link to={"/register"} className="registrate">
+              Regístrate
+            </Link>
+          </div>
+        </div>
+        <div className="col s12 l4"></div>
       </div>
-      <Link to={"/RecuperarPassword"} className="olvide">
-      ¿Olvidaste tu Contraseña?
-      </Link>
-  
-      <div className="cuentaLog">¿No tienes una cuenta?</div>
-      <Link to={"/register"} className="registrate">
-        Regístrate
-      </Link>
     </div>
   );
 };

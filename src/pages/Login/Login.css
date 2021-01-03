@@ -1,14 +1,21 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
 .logincont{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    /* justify-content: left; */
     align-items: left;
     color: black;
 }
 
 .boton-iniciaSesion-container{
     position: relative;
-    left: 480px; 
+    left: 9vw; 
     top: 50px; 
     display: flex;
 
@@ -34,7 +41,7 @@
   }
 
   .olvide{
-    margin-left: 760px; 
+    margin-left: 22vw; 
     margin-top: -45px; 
     color: gray;
     text-decoration: underline;
@@ -42,14 +49,14 @@
   }
 
   .cuentaLog{
-    margin-left: 685px; 
+    margin-left: 18vw; 
     margin-top: 100px;
     color: gray;
     font-size: 15px;
   }
 
   .registrate{
-    margin-left: 855px; 
+    margin-left: 27vw; 
     margin-top: -22px; 
     color: rgba(44, 75, 142, 1);
     font-weight: bold;
@@ -57,27 +64,27 @@
   }
 
   .titulo{
-    margin-left: 340px;
+    /* margin-left: 340px; */
   }
 
   .labelCorreo{
-    margin-left: 330px;
+    /* margin-left: 330px; */
 
   }
   
   .inputCorreo{
     width: 500px;
-    margin-left: 330px;
+    /* margin-left: 330px; */
   }
 
   .inputContraseña{
     width: 500px;
-    margin-left: 330px;
+    /* margin-left: 330px; */
   }
 
 
   .labelContraseña{
-    margin-left: 330px;
+    /* margin-left: 330px; */
 
   }
   

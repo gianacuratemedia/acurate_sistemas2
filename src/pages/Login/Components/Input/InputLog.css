@@ -1,6 +1,6 @@
 .input-container {
     width: 100%;
-    left: 1030px;
+    /* left: 1030px; */
     top: -10px;
     position: relative;
 }
@@ -34,10 +34,10 @@
     border-radius: 15px;
     border: none;
     justify-content: left;
-    left: 100;
+    /* left: 100; */
     padding: 0 10px 0 20px;
     box-sizing: border-box;
-    margin-left: 500px;
+    /* margin-left: 500px; */
     font-size: 14px;
 }
 
