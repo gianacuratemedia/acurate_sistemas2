@@ -14,7 +14,8 @@ class Curso(models.Model):
      dificultad=models.CharField(max_length=50,null=False)
      limite=models.IntegerField(null=True)
      descripcion=models.CharField(max_length=300,null=False)
-     no_visitas=models.IntegerField(null=True)
+     no_vistas=models.IntegerField(null=True, default=0)
+     no_vistas_t=models.IntegerField(null=True, default=0)
      created_at = models.DateTimeField(auto_now_add=True)
      updated_at = models.DateTimeField(auto_now=True)
 
@@ -42,4 +43,19 @@ class Contenido(models.Model):
 
      def __str__(self):
         return str(self.owner)+'s contenido'
-			
+
+#Modelo contenido creado por usuario 
+class Contenido_Usuario(models.Model):
+     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
+     contenido_trimestral=models.IntegerField(null=False, default=0)
+     created_at = models.DateTimeField(auto_now_add=True)
+     updated_at = models.DateTimeField(auto_now=True)
+
+     class Meta:
+        ordering: ['-update_at']
+
+     def __str__(self):
+        return str(self.owner)+'s contenido'
+
+
+
