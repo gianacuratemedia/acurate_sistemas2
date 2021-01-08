@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Curso, Contenido
+from .models import Curso, Contenido, Contenido_Usuario
 
 
 class CursoSerializer(serializers.ModelSerializer):
@@ -39,3 +39,29 @@ class PublicContenidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contenido
         fields = ['tipo', 'mensaje','archivo_ubc','fecha_limite']
+
+
+
+class InfoCursoPay(serializers.ModelSerializer):
+
+    class Meta:
+        model = Curso
+        fields = ['nombre', 'owner','no_vistas','no_vistas_t']
+
+class ShowIdCurso(serializers.ModelSerializer):
+    class Meta:
+        model=Curso
+        fields=['owner']
+
+
+class InfoContenidoPay(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contenido_Usuario
+        fields = ['owner','contenido_trimestral']
+
+
+class ShowIdContenido(serializers.ModelSerializer):
+    class Meta:
+        model=Contenido_Usuario
+        fields=['owner']
