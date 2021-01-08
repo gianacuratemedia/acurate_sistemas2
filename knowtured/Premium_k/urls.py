@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls import url
 from Premium_k import views
-from .views import save_stripe_info_pa
+from .views import save_stripe_info_pa, TransferStripe, Stripe_Transfer_User
 
 urlpatterns = [
  path('test-payment/', views.test_payment),
@@ -10,6 +10,11 @@ urlpatterns = [
  path('save-stripe-info/plan-mensual/', views.save_stripe_info_pm),
  path('confirm-payment-intent/', views.confirm_payment_intent),
  path('cancel_subscription_p/', views.CancelSub_FP), 
- path('cancel_subscription_t/', views.CancelSub_C),
+ path('consultar_saldo/', views.ConsultSaldo),
 
+ #Realizar consulta del id de la cuenta del tutor en Stripe 
+ path('datos-cuenta-user/<int:user>', Stripe_Transfer_User.as_view(), name="cuenta_stripe_user"), 
+
+ #Realizar transferencia 
+ path('transferencias/', TransferStripe.as_view(), name="transferencias"), 
 ]
