@@ -1,11 +1,12 @@
 import stripe
 from rest_framework import status, permissions, generics
 from rest_framework.decorators import api_view
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from .permissions import IsOwner
-from .models import StripeCustomer
+from .models import StripeCustomer, StripeCustomerTransfers
 from Usuarios_k.models import User
-
+from .serializers import Stripe_Transfer_S
 
 stripe.api_key='sk_test_51HsBSREnWktr8a8ZgMg3sYI7q46FZ9JklEXbWi0XXUm7FlfqQ1JzeBp082sj4PYn4OkyQEsgwbm95W5VCDJEEJv500tkmNuLvs'
 
@@ -179,16 +180,6 @@ def my_subs(request):
 
 
 
- #Cancelar suscripción o eliminar suscripción
-@api_view(['POST'])
-def CancelSub_C(request):
-        data=request.data
-        subscription_id= data['subscription_id']
-        Cancel_subs=stripe.Subscription.delete(
-        subscription_id
-        )
-        return Response(status=status.HTTP_200_OK, data=Cancel_subs)
-
  #Cancelar suscripción al final del periodo de facturación
 
 @api_view(['POST'])
@@ -199,7 +190,68 @@ def CancelSub_FP(request):
         subscription_id,
         cancel_at_period_end=True
         )
-    
     return Response(status=status.HTTP_200_OK, data=Cancel_subs)
+
+
+
+
+#Consultar total de fondos stripe 
+
+@api_view(['GET'])
+def ConsultSaldo(request):
+    data=request.data
+
+    Saldo=stripe.Balance.retrieve()
+    return Response(status=status.HTTP_200_OK, data=Saldo)
+
+
+#Crear cuenta de Stripe para los profesores y guardar los datos en tabla llamada StripeCustomerTransfers
+
+
+
+#View Realizar transferencia 
+
+class TransferStripe(generics.GenericAPIView):
+ permission_classes = (permissions.IsAuthenticated,)
+ 
+ def post(self, request):
+    data = request.data
+    pago= data['pago']
+    pago1=float(pago)
+    destino= data['destino']
+
+    # realizando la transferencia
+
+    transfer=stripe.Transfer.create(
+        amount=pago1,
+        currency="mxn",
+        destination=destino,
+     )
+ 
+    return Response(status=status.HTTP_200_OK, data=transfer)
+
+
+
+    #View realizar consulta del id de la cuenta de Stripe del profesor 
+
+class Stripe_Transfer_User(ListAPIView):
+    serializer_class = Stripe_Transfer_S
+
+    def get_queryset(self, user):
+        try:
+            transfer_user = StripeCustomerTransfers.objects.get(user=user)
+        except StripeCustomerTransfers.DoesNotExist:
+            content = {
+                'status': 'Not Found'
+            }
+            return Response(content, status=status.HTTP_404_NOT_FOUND)
+        return transfer_user
+
+    # Get info por id
+    def get(self, request, user):
+
+        transfer_user = self.get_queryset(user)
+        serializer = Stripe_Transfer_S(transfer_user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
